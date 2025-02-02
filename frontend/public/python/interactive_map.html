@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js" integrity="sha512-Dqm3h1Y4qiHUjbhxTuBGQsza0Tfppn53SHlu/uj1f+RT+xfShfe7r6czRf5r2NmllO2aKx+tYJgoxboOkn1Scg==" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha512-BOsvKbLb0dB1IVplOL9ptU1EYA+LuCKEluZWRUYG73hxqNBU85JBIBhPGwhQl7O633KtkjMv8lvxZcWP+N3V3w==" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js" integrity="sha512-Oj9plGLST4IMXFXDfqMdTP+gSInbodkyno117PSjo5R08eu6TdzY9WPnnwQZGx2O2lG/kN0MzQk95ulWsRFuLA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7bb26bf93ee174f8b3cc7ebc323dfd72 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js" integrity="sha384-d3fZjp9NKg6g+z82JfePUaUc/O3DiJNfYUQh1lQ/+pV1TocwxX0ZU/+jVHjJ9dSU" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+     <div style="
+     position: fixed;
+     bottom: 50px; left: 50px; width: 200px; height: auto;
+     background-color: white;
+     border:2px solid grey; z-index:9999; font-size:14px;
+     ">
+     <h4 style="margin:10px">Primary Language Spoken</h4>
+     <ul style="list-style:none; padding:0; margin:10px;">
+<li><span style="background-color:#e41a1c; width:12px; height:12px; display:inline-block; margin-right:6px;"></span>Yiddish</li><li><span style="background-color:#377eb8; width:12px; height:12px; display:inline-block; margin-right:6px;"></span>Unknown</li><li><span style="background-color:#984ea3; width:12px; height:12px; display:inline-block; margin-right:6px;"></span>English</li><li><span style="background-color:#ff7f00; width:12px; height:12px; display:inline-block; margin-right:6px;"></span>Russian</li><li><span style="background-color:#a65628; width:12px; height:12px; display:inline-block; margin-right:6px;"></span>Hungarian</li><li><span style="background-color:#f781bf; width:12px; height:12px; display:inline-block; margin-right:6px;"></span>French</li><li><span style="background-color:#999999; width:12px; height:12px; display:inline-block; margin-right:6px;"></span>German</li></ul></div>
+    
+            <div class="folium-map" id="map_7bb26bf93ee174f8b3cc7ebc323dfd72" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7bb26bf93ee174f8b3cc7ebc323dfd72 = L.map(
+                "map_7bb26bf93ee174f8b3cc7ebc323dfd72",
+                {
+                    center: [47.679981492592574, -18.228170424074072],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_dcf560a8f264f6fabfe8819f1edeaf91 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_dcf560a8f264f6fabfe8819f1edeaf91.addTo(map_7bb26bf93ee174f8b3cc7ebc323dfd72);
+        
+    
+            var feature_group_4f6e1004d87c068f500c605484483145 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_cluster_d2500b210acb0547f701fede0df302b1 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_dffafe5b9ec28a6b27b5fe8a4ad9ef21 = L.marker(
+                [46.4843023, 30.7322878],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_062f3ee1c438d11260a65140fd4dd28d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_dffafe5b9ec28a6b27b5fe8a4ad9ef21.setIcon(icon_062f3ee1c438d11260a65140fd4dd28d);
+        
+    
+        var popup_1f570d5aece214ab5180c69e4900e5ed = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_41c74506b058648d4df8c9cfd7eb8a55 = $(`<div id="html_41c74506b058648d4df8c9cfd7eb8a55" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Nettie Nehamovitz (changed to Nettie/Natasha Namowitz at Ellis Island). Married name was Nettie/Natasha Auerbach. Women in my family did not have Hebrew names, they had Yiddish names. Supposedly it was Nucha.<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1920s<br>     <b>Birth Country:</b> Bessarabia<br>     <b>Birth Country Detail:</b> Odessa<br>     <b>Birth City:</b> Odessa, Ukraine<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Russian<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1920s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_1f570d5aece214ab5180c69e4900e5ed.setContent(html_41c74506b058648d4df8c9cfd7eb8a55);
+            
+        
+
+        marker_dffafe5b9ec28a6b27b5fe8a4ad9ef21.bindPopup(popup_1f570d5aece214ab5180c69e4900e5ed)
+        ;
+
+        
+    
+    
+            var marker_cbbda0e8a33abb078ca0f9ff2d19021f = L.marker(
+                [44.2085, 27.3137],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_417066dc495167db56017d8317ee9f65 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_cbbda0e8a33abb078ca0f9ff2d19021f.setIcon(icon_417066dc495167db56017d8317ee9f65);
+        
+    
+        var popup_edc07a301858df71932195391df2e375 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_60a9b75a4ef68a9e1e9040def2c9d5e3 = $(`<div id="html_60a9b75a4ef68a9e1e9040def2c9d5e3" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Nathan/Natan Nechamavitz was changed to Nathan Namowitz at Ellis Island. Hebrew name unknown, I would assume it was Natan.<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1890s<br>     <b>Birth Country:</b> Bessarabia<br>     <b>Birth Country Detail:</b> Calarasi, Romania (Bessarabia)<br>     <b>Birth City:</b> Calarasi Romania<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Russian<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1920s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_edc07a301858df71932195391df2e375.setContent(html_60a9b75a4ef68a9e1e9040def2c9d5e3);
+            
+        
+
+        marker_cbbda0e8a33abb078ca0f9ff2d19021f.bindPopup(popup_edc07a301858df71932195391df2e375)
+        ;
+
+        
+    
+    
+            var marker_5108e2c692ebc09214cdb15814de3fda = L.marker(
+                [59.9311, 30.3609],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_8ddd1862545dbd4655409cd89bad07bc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_5108e2c692ebc09214cdb15814de3fda.setIcon(icon_8ddd1862545dbd4655409cd89bad07bc);
+        
+    
+        var popup_6d6566dee83a61d9e5952f5ce8a2b649 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_1653ee81cdc66c837b918b9054d3125f = $(`<div id="html_1653ee81cdc66c837b918b9054d3125f" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Pessi Goldstein (Pauline Namowitz, when married and immigrated)<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1890s<br>     <b>Birth Country:</b> Russia<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Russian<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1920s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_6d6566dee83a61d9e5952f5ce8a2b649.setContent(html_1653ee81cdc66c837b918b9054d3125f);
+            
+        
+
+        marker_5108e2c692ebc09214cdb15814de3fda.bindPopup(popup_6d6566dee83a61d9e5952f5ce8a2b649)
+        ;
+
+        
+    
+    
+            var marker_945fca5dbdd2f6d1c6dcae640dfe2804 = L.marker(
+                [48.166667, 27.316667],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_b2b54c7b2f86a90bd9c297d438ba54b1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_945fca5dbdd2f6d1c6dcae640dfe2804.setIcon(icon_b2b54c7b2f86a90bd9c297d438ba54b1);
+        
+    
+        var popup_94649f6843b0989e90b19ae7b048cb1a = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_9ec89321635c69f4c2577ccdf797afc7 = $(`<div id="html_9ec89321635c69f4c2577ccdf797afc7" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Hyman Goodman<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1850s<br>     <b>Birth Country:</b> Moldova<br>     <b>Birth Country Detail:</b> Yedinitz, Edinet, Moldova<br>     <b>Birth City:</b> Yedinitz, Moldova<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Potentially also Russian, but I am unsure<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1910s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_94649f6843b0989e90b19ae7b048cb1a.setContent(html_9ec89321635c69f4c2577ccdf797afc7);
+            
+        
+
+        marker_945fca5dbdd2f6d1c6dcae640dfe2804.bindPopup(popup_94649f6843b0989e90b19ae7b048cb1a)
+        ;
+
+        
+    
+    
+            var marker_7888bdbe5fcd46ea05a798e8454fcc96 = L.marker(
+                [56.9493977, 24.1051846],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_24ec176840c5e9c4f325faceb123dc5f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#377eb8", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_7888bdbe5fcd46ea05a798e8454fcc96.setIcon(icon_24ec176840c5e9c4f325faceb123dc5f);
+        
+    
+        var popup_52a9ece1a40ffa13308e2da430a19b08 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_a17663f5e80ee850de1dbf8edec91fe3 = $(`<div id="html_a17663f5e80ee850de1dbf8edec91fe3" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Joseph Held<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1880s<br>     <b>Birth Country:</b> Latvia / Estonia<br>     <b>Birth Country Detail:</b> Resisca, Latvia<br>     <b>Birth City:</b> Resisca, Latvia<br>     <b>Primary Language Spoken in Childhood:</b> Unknown<br>     <b>Other Spoken Languages:</b> English, Unknown if others<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1910s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_52a9ece1a40ffa13308e2da430a19b08.setContent(html_a17663f5e80ee850de1dbf8edec91fe3);
+            
+        
+
+        marker_7888bdbe5fcd46ea05a798e8454fcc96.bindPopup(popup_52a9ece1a40ffa13308e2da430a19b08)
+        ;
+
+        
+    
+    
+            var marker_fb23d511b4c0a532a22949d5fc0f44c6 = L.marker(
+                [56.9493977, 24.1051846],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_012ca27aa195e67040769734107a4fb2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_fb23d511b4c0a532a22949d5fc0f44c6.setIcon(icon_012ca27aa195e67040769734107a4fb2);
+        
+    
+        var popup_c3451eaaea60598c01f61442e1c65a19 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_234abe0c05d473f6ad36f6702e1737d3 = $(`<div id="html_234abe0c05d473f6ad36f6702e1737d3" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Rose Crystal (maiden name) became Rose Held.<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1890s<br>     <b>Birth Country:</b> Latvia / Estonia<br>     <b>Birth Country Detail:</b> Riga, Latvia<br>     <b>Birth City:</b> Riga, Latvia<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Unknown if something besides English<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1910s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_c3451eaaea60598c01f61442e1c65a19.setContent(html_234abe0c05d473f6ad36f6702e1737d3);
+            
+        
+
+        marker_fb23d511b4c0a532a22949d5fc0f44c6.bindPopup(popup_c3451eaaea60598c01f61442e1c65a19)
+        ;
+
+        
+    
+    
+            var marker_8d83d8324b856903ee1b0b4cd84ab773 = L.marker(
+                [41.4849, -73.59212],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_78548e8fabc4ab3a15b0d8f7cc4ad648 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_8d83d8324b856903ee1b0b4cd84ab773.setIcon(icon_78548e8fabc4ab3a15b0d8f7cc4ad648);
+        
+    
+        var popup_0a3d1bd8b91d7bf61ee0ae8213eca42b = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_74a575e89fdc0a26ec837f457a9ce012 = $(`<div id="html_74a575e89fdc0a26ec837f457a9ce012" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Michael Canali<br>     <b>Relation:</b> Parent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1950s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Patterson, NJ<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Pittsburgh, PA<br>     </div>`)[0];
+                popup_0a3d1bd8b91d7bf61ee0ae8213eca42b.setContent(html_74a575e89fdc0a26ec837f457a9ce012);
+            
+        
+
+        marker_8d83d8324b856903ee1b0b4cd84ab773.bindPopup(popup_0a3d1bd8b91d7bf61ee0ae8213eca42b)
+        ;
+
+        
+    
+    
+            var marker_80638e8a783c10ce78fa2fe55fcf8cf3 = L.marker(
+                [40.735657, -74.1723667],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_7ce73cb5c9e61b426c878199e1a29ff7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_80638e8a783c10ce78fa2fe55fcf8cf3.setIcon(icon_7ce73cb5c9e61b426c878199e1a29ff7);
+        
+    
+        var popup_d2adfc6d235d45aeaa54b0f092357aef = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_8c601476ef25539308110acc51e7c321 = $(`<div id="html_8c601476ef25539308110acc51e7c321" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Ernest/Ernesto Canali<br>     <b>Relation:</b> Grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1930s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Newark, NJ<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> No<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Newark, NJ<br>     </div>`)[0];
+                popup_d2adfc6d235d45aeaa54b0f092357aef.setContent(html_8c601476ef25539308110acc51e7c321);
+            
+        
+
+        marker_80638e8a783c10ce78fa2fe55fcf8cf3.bindPopup(popup_d2adfc6d235d45aeaa54b0f092357aef)
+        ;
+
+        
+    
+    
+            var marker_f8d4c9032d599253293b8aea751e3ebf = L.marker(
+                [40.735657, -74.1723667],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_9720106b8b2ca2104980ea7829057f85 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_f8d4c9032d599253293b8aea751e3ebf.setIcon(icon_9720106b8b2ca2104980ea7829057f85);
+        
+    
+        var popup_3f9905c46d6757c66c632c3c18d95589 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_a19046556ebdf536c3a6f078b184b5f0 = $(`<div id="html_a19046556ebdf536c3a6f078b184b5f0" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Carmela Morana<br>     <b>Relation:</b> Grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1930s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Newark, NJ<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Italian<br>     <b>Jewish?</b> No<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Newark, NJ<br>     </div>`)[0];
+                popup_3f9905c46d6757c66c632c3c18d95589.setContent(html_a19046556ebdf536c3a6f078b184b5f0);
+            
+        
+
+        marker_f8d4c9032d599253293b8aea751e3ebf.bindPopup(popup_3f9905c46d6757c66c632c3c18d95589)
+        ;
+
+        
+    
+    
+            var marker_182d6f73dcb3f2c2272951a2c084e24f = L.marker(
+                [42.2625621, -71.8018877],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_603b26bd1861b262086af484adfe75bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_182d6f73dcb3f2c2272951a2c084e24f.setIcon(icon_603b26bd1861b262086af484adfe75bf);
+        
+    
+        var popup_974703f57526e5576a736684cb5b0b1f = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_cbf5559811922407678fee62f79cfc6b = $(`<div id="html_cbf5559811922407678fee62f79cfc6b" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Joseph Eisenberg<br>     <b>Relation:</b> Grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1920s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Worcester, MA<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Hebrew, Spanish<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_974703f57526e5576a736684cb5b0b1f.setContent(html_cbf5559811922407678fee62f79cfc6b);
+            
+        
+
+        marker_182d6f73dcb3f2c2272951a2c084e24f.bindPopup(popup_974703f57526e5576a736684cb5b0b1f)
+        ;
+
+        
+    
+    
+            var marker_448b7bf0de26f629f5dc7925e45d8848 = L.marker(
+                [41.8755616, -87.6244212],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_76b4a5ad5078b6dae4293972bd1d3716 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_448b7bf0de26f629f5dc7925e45d8848.setIcon(icon_76b4a5ad5078b6dae4293972bd1d3716);
+        
+    
+        var popup_95de82389a76f248da72d903c4a58ce7 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_7ccb5c090365c149a0a29797bcbf76d0 = $(`<div id="html_7ccb5c090365c149a0a29797bcbf76d0" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Arnona Marenof<br>     <b>Relation:</b> Grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1930s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Chicago, IL<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Hebrew<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_95de82389a76f248da72d903c4a58ce7.setContent(html_7ccb5c090365c149a0a29797bcbf76d0);
+            
+        
+
+        marker_448b7bf0de26f629f5dc7925e45d8848.bindPopup(popup_95de82389a76f248da72d903c4a58ce7)
+        ;
+
+        
+    
+    
+            var marker_b649766c0cb14482e48f58fe960b4263 = L.marker(
+                [51.5074456, -0.1277653],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_be14fabe3ded4530b639a5cdb0c14dc4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_b649766c0cb14482e48f58fe960b4263.setIcon(icon_be14fabe3ded4530b639a5cdb0c14dc4);
+        
+    
+        var popup_05654c0ffdceb855f1b5c392f990c9b1 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_d1ead8b738aa88a48f3c4f7f3f0cef59 = $(`<div id="html_d1ead8b738aa88a48f3c4f7f3f0cef59" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Harry/Tzvi Eisenberg<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1900s<br>     <b>Birth Country:</b> United Kingdom<br>     <b>Birth Country Detail:</b> Born in the UK while his family was heading to the United States from Germany<br>     <b>Birth City:</b> London, UK<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1900s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_05654c0ffdceb855f1b5c392f990c9b1.setContent(html_d1ead8b738aa88a48f3c4f7f3f0cef59);
+            
+        
+
+        marker_b649766c0cb14482e48f58fe960b4263.bindPopup(popup_05654c0ffdceb855f1b5c392f990c9b1)
+        ;
+
+        
+    
+    
+            var marker_f9ce2c25e7890a6058eff2eff70842fc = L.marker(
+                [50.4500336, 30.5241361],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_f87eb3388d030ca941f0ab37464e8c9f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_f9ce2c25e7890a6058eff2eff70842fc.setIcon(icon_f87eb3388d030ca941f0ab37464e8c9f);
+        
+    
+        var popup_8969150c5b3b5ca47991a2a39adcd783 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_67d35926151e5ec6041c8909a2c619a1 = $(`<div id="html_67d35926151e5ec6041c8909a2c619a1" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Shlomo Marenof (Marienofsky)<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1890s<br>     <b>Birth Country:</b> Ukraine<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Kiev, Ukraine<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Hebrew, Russian, Yiddish, Arabic, and according to family he spoke eleven languages fluently.<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1920s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_8969150c5b3b5ca47991a2a39adcd783.setContent(html_67d35926151e5ec6041c8909a2c619a1);
+            
+        
+
+        marker_f9ce2c25e7890a6058eff2eff70842fc.bindPopup(popup_8969150c5b3b5ca47991a2a39adcd783)
+        ;
+
+        
+    
+    
+            var marker_411f4e512749b320cfa0ca11cd04c63d = L.marker(
+                [54.6870458, 25.2829111],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_48e0edd562b6548a7d2c895b2623dc7e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_411f4e512749b320cfa0ca11cd04c63d.setIcon(icon_48e0edd562b6548a7d2c895b2623dc7e);
+        
+    
+        var popup_7b0daf8cf81f17fcf2f9b9a40b073cc5 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_0fcdc475fc6c5855e129e7d88af5ecbb = $(`<div id="html_0fcdc475fc6c5855e129e7d88af5ecbb" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Hannah Martha Friedman<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1890s<br>     <b>Birth Country:</b> Lithuania<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Vilnius, Lithuania<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Hebrew, Yiddish<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1900s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_7b0daf8cf81f17fcf2f9b9a40b073cc5.setContent(html_0fcdc475fc6c5855e129e7d88af5ecbb);
+            
+        
+
+        marker_411f4e512749b320cfa0ca11cd04c63d.bindPopup(popup_7b0daf8cf81f17fcf2f9b9a40b073cc5)
+        ;
+
+        
+    
+    
+            var marker_ba2f0a50746ec88f5090b7ce6e08146f = L.marker(
+                [59.9311, 30.3609],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_632561d3ac18992aa9d27a062dca8425 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_ba2f0a50746ec88f5090b7ce6e08146f.setIcon(icon_632561d3ac18992aa9d27a062dca8425);
+        
+    
+        var popup_0c989f3894fc2bb4b71448f6e1c5ca29 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_991572b6bfe83253126315466169f7cc = $(`<div id="html_991572b6bfe83253126315466169f7cc" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Lieb Ladyzhensky (changed to Louis Landin), לב בן נחום ורבקה<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1870s<br>     <b>Birth Country:</b> Russia<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Russian<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1900s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_0c989f3894fc2bb4b71448f6e1c5ca29.setContent(html_991572b6bfe83253126315466169f7cc);
+            
+        
+
+        marker_ba2f0a50746ec88f5090b7ce6e08146f.bindPopup(popup_0c989f3894fc2bb4b71448f6e1c5ca29)
+        ;
+
+        
+    
+    
+            var marker_5b5112eff2d37e93c1dceefae850ca1f = L.marker(
+                [52.134722, 23.656944],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_41576587b959b5a930f358958618fd95 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_5b5112eff2d37e93c1dceefae850ca1f.setIcon(icon_41576587b959b5a930f358958618fd95);
+        
+    
+        var popup_23bcf424eec56d5200ecaa376fab574f = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_0bba4293f706960c6211957a48c9374e = $(`<div id="html_0bba4293f706960c6211957a48c9374e" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Deborah Klein, nee Katznellenbogen (changed to Katz), דבורה בת ר׳ אהרן שלמה הכהן<br>     <b>Relation:</b> 5th great-grandmother<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> Before 1850<br>     <b>Birth Country:</b> Belarus<br>     <b>Birth Country Detail:</b> Born in 1810<br>     <b>Birth City:</b> Litovsk , Belarus<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Hungarian, Russian<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Before 1880<br>     <b>Destination Country</b> Hungary<br>     <b>Destination City</b> Nagyszollos, Hungary<br>     </div>`)[0];
+                popup_23bcf424eec56d5200ecaa376fab574f.setContent(html_0bba4293f706960c6211957a48c9374e);
+            
+        
+
+        marker_5b5112eff2d37e93c1dceefae850ca1f.bindPopup(popup_23bcf424eec56d5200ecaa376fab574f)
+        ;
+
+        
+    
+    
+            var marker_5f59e5129a95e3399e744cf75f478109 = L.marker(
+                [53.4, 23.5],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_8447aa5a8c4aff6a1372d775ff00cf8a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_5f59e5129a95e3399e744cf75f478109.setIcon(icon_8447aa5a8c4aff6a1372d775ff00cf8a);
+        
+    
+        var popup_63c86be1bf2d8f90b2fd9e1d9c2c9691 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_6042079d8e43bc2ee43b90d540d8f67b = $(`<div id="html_6042079d8e43bc2ee43b90d540d8f67b" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Moshe Yechezkiel Izak (changed to Morris Haskell Isaacson), משה יחזקאל בן דוב–בער ושרה<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1860s<br>     <b>Birth Country:</b> Russia<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Sakalka, Russia<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Russian<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1880s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_63c86be1bf2d8f90b2fd9e1d9c2c9691.setContent(html_6042079d8e43bc2ee43b90d540d8f67b);
+            
+        
+
+        marker_5f59e5129a95e3399e744cf75f478109.bindPopup(popup_63c86be1bf2d8f90b2fd9e1d9c2c9691)
+        ;
+
+        
+    
+    
+            var marker_9be6761c608e48c3b7b27f1733e40823 = L.marker(
+                [50.0619474, 19.9368564],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_3259b0e81f72d327056aab367258239c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_9be6761c608e48c3b7b27f1733e40823.setIcon(icon_3259b0e81f72d327056aab367258239c);
+        
+    
+        var popup_02892b5a526a5a06f3038b2668cddec5 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_a1ae05d100ca200fe50fe82ef273f993 = $(`<div id="html_a1ae05d100ca200fe50fe82ef273f993" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Moses Isserles, הרב משה בן ר׳ ישראל ומלכה<br>     <b>Relation:</b> 11th great-granduncle<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> Before 1850<br>     <b>Birth Country:</b> Poland<br>     <b>Birth Country Detail:</b> Born in 1525<br>     <b>Birth City:</b> Krakow, Poland<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> Polish, Russian<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_02892b5a526a5a06f3038b2668cddec5.setContent(html_a1ae05d100ca200fe50fe82ef273f993);
+            
+        
+
+        marker_9be6761c608e48c3b7b27f1733e40823.bindPopup(popup_02892b5a526a5a06f3038b2668cddec5)
+        ;
+
+        
+    
+    
+            var marker_8f5119132cd2acb5b6e0d1ac67d03349 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_d95477a518b2551c5b001abf8c2b7e4c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_8f5119132cd2acb5b6e0d1ac67d03349.setIcon(icon_d95477a518b2551c5b001abf8c2b7e4c);
+        
+    
+        var popup_ec92c76c84bf59f93c2636a3bcfb881f = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_c87216f8c9b677c0ba9d7563e06c9fc3 = $(`<div id="html_c87216f8c9b677c0ba9d7563e06c9fc3" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Dorothy "Dot" Cohen (changed to Crane), nee Doliner, דבורה בת ליפא וחנה<br>     <b>Relation:</b> Grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1910s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> New York, NY<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_ec92c76c84bf59f93c2636a3bcfb881f.setContent(html_c87216f8c9b677c0ba9d7563e06c9fc3);
+            
+        
+
+        marker_8f5119132cd2acb5b6e0d1ac67d03349.bindPopup(popup_ec92c76c84bf59f93c2636a3bcfb881f)
+        ;
+
+        
+    
+    
+            var marker_f13226d173b08e347e44f322a1831917 = L.marker(
+                [48.205556, 22.647222],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_4cddf5388bd1db9408c29fdb3bbbcc46 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_f13226d173b08e347e44f322a1831917.setIcon(icon_4cddf5388bd1db9408c29fdb3bbbcc46);
+        
+    
+        var popup_0e9042435de4b5eb3d2faeb35edba8e7 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_1702ad79fea0cfc483a8cd89efe91881 = $(`<div id="html_1702ad79fea0cfc483a8cd89efe91881" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Helen Weiss, nee Gelberman, חיה בת ר׳ יעקב הלבי ורייזעל<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1900s<br>     <b>Birth Country:</b> Hungary<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Beregszasz, Hungary<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Hungarian<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1900s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_0e9042435de4b5eb3d2faeb35edba8e7.setContent(html_1702ad79fea0cfc483a8cd89efe91881);
+            
+        
+
+        marker_f13226d173b08e347e44f322a1831917.bindPopup(popup_0e9042435de4b5eb3d2faeb35edba8e7)
+        ;
+
+        
+    
+    
+            var marker_28c637e45685433e5cf2de2ea654a0a7 = L.marker(
+                [50.0012314, 8.2762513],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_028772105bc74695e31dfc966bf118bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_28c637e45685433e5cf2de2ea654a0a7.setIcon(icon_028772105bc74695e31dfc966bf118bf);
+        
+    
+        var popup_b5571b035e52855cb25fae7108155683 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_e02324e4e85d714f2d9289b8cab902e6 = $(`<div id="html_e02324e4e85d714f2d9289b8cab902e6" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Meir Warschler, מאיר<br>     <b>Relation:</b> 16th great-grandfather<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> Before 1850<br>     <b>Birth Country:</b> Germany<br>     <b>Birth Country Detail:</b> Born in 1469<br>     <b>Birth City:</b> Mainz, Germany<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> German<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_b5571b035e52855cb25fae7108155683.setContent(html_e02324e4e85d714f2d9289b8cab902e6);
+            
+        
+
+        marker_28c637e45685433e5cf2de2ea654a0a7.bindPopup(popup_b5571b035e52855cb25fae7108155683)
+        ;
+
+        
+    
+    
+            var marker_908b09577b161a989ff38d6f7f418a79 = L.marker(
+                [46.4843023, 30.7322878],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_8c0470fef8f10346bd6c406e9a6f95f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_908b09577b161a989ff38d6f7f418a79.setIcon(icon_8c0470fef8f10346bd6c406e9a6f95f7);
+        
+    
+        var popup_eeff05226819957363a0a32ad3fd0b7e = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_dea50fec7875d90db5dc1481e689fba9 = $(`<div id="html_dea50fec7875d90db5dc1481e689fba9" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Samuel "Sam" Schneiderman (changed to Snyder), שלמה בר נחמן ואסתר<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1860s<br>     <b>Birth Country:</b> Ukraine<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Odessa, Ukraine<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Russian, Ukrainian<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1890s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_eeff05226819957363a0a32ad3fd0b7e.setContent(html_dea50fec7875d90db5dc1481e689fba9);
+            
+        
+
+        marker_908b09577b161a989ff38d6f7f418a79.bindPopup(popup_eeff05226819957363a0a32ad3fd0b7e)
+        ;
+
+        
+    
+    
+            var marker_2d75bc1fa10f98591ca0e7c62c7a5678 = L.marker(
+                [40.735657, -74.1723667],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_1f3149853472dcfaba1568669cd780c1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_2d75bc1fa10f98591ca0e7c62c7a5678.setIcon(icon_1f3149853472dcfaba1568669cd780c1);
+        
+    
+        var popup_0bec39b49a5ca5adb8c29aa7b34f17c8 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_92f6b32a2fc9386c526d9d55fe949ec3 = $(`<div id="html_92f6b32a2fc9386c526d9d55fe949ec3" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Lynn Starr; maiden name: Lynn Shapiro; Hebrew name: chaya<br>     <b>Relation:</b> Parent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1960s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Newark, NJ<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> McLean, VA<br>     </div>`)[0];
+                popup_0bec39b49a5ca5adb8c29aa7b34f17c8.setContent(html_92f6b32a2fc9386c526d9d55fe949ec3);
+            
+        
+
+        marker_2d75bc1fa10f98591ca0e7c62c7a5678.bindPopup(popup_0bec39b49a5ca5adb8c29aa7b34f17c8)
+        ;
+
+        
+    
+    
+            var marker_1d94c0a90f3b7fa31dcc3936609bee79 = L.marker(
+                [41.4996574, -81.6936772],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_9c33ac53141a90797771a661e01950c6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_1d94c0a90f3b7fa31dcc3936609bee79.setIcon(icon_9c33ac53141a90797771a661e01950c6);
+        
+    
+        var popup_dbd5190436ce0648a578901895fda69b = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_46b2f40b32ae30f49e4374116c6cd56b = $(`<div id="html_46b2f40b32ae30f49e4374116c6cd56b" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Alexander Starr; Hebrew name: Aharon Pesach<br>     <b>Relation:</b> Parent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1950s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Cleveland, OH<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_dbd5190436ce0648a578901895fda69b.setContent(html_46b2f40b32ae30f49e4374116c6cd56b);
+            
+        
+
+        marker_1d94c0a90f3b7fa31dcc3936609bee79.bindPopup(popup_dbd5190436ce0648a578901895fda69b)
+        ;
+
+        
+    
+    
+            var marker_acee80938c0df8ed58fed2d36daddbfd = L.marker(
+                [42.525746, -70.887703],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_90bd9153220bd1e7476bbb9ac0d0f61e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_acee80938c0df8ed58fed2d36daddbfd.setIcon(icon_90bd9153220bd1e7476bbb9ac0d0f61e);
+        
+    
+        var popup_ce59b2b135189151e0378841790caa41 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_8f33fcf2bedda28d9a7b83ee9e31cdba = $(`<div id="html_8f33fcf2bedda28d9a7b83ee9e31cdba" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Naomi Starr; maiden name: Naomi Simkes; hebrew name: Naomi<br>     <b>Relation:</b> Grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1920s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Salem, MA<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Hebrew<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_ce59b2b135189151e0378841790caa41.setContent(html_8f33fcf2bedda28d9a7b83ee9e31cdba);
+            
+        
+
+        marker_acee80938c0df8ed58fed2d36daddbfd.bindPopup(popup_ce59b2b135189151e0378841790caa41)
+        ;
+
+        
+    
+    
+            var marker_a5fa17499c18582d0ac45f16d99fa6f6 = L.marker(
+                [42.3554334, -71.060511],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_bef64bcb3afd4f42b3f876e7ec099650 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_a5fa17499c18582d0ac45f16d99fa6f6.setIcon(icon_bef64bcb3afd4f42b3f876e7ec099650);
+        
+    
+        var popup_78d6861e311013d5f37a705af68f6ee8 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_1c78272ff6e4b1425fa12e94100181fb = $(`<div id="html_1c78272ff6e4b1425fa12e94100181fb" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Jason Starr<br>     <b>Relation:</b> Grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1920s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Boston, MA<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_78d6861e311013d5f37a705af68f6ee8.setContent(html_1c78272ff6e4b1425fa12e94100181fb);
+            
+        
+
+        marker_a5fa17499c18582d0ac45f16d99fa6f6.bindPopup(popup_78d6861e311013d5f37a705af68f6ee8)
+        ;
+
+        
+    
+    
+            var marker_1830c459188af4bcf72364cd4900c567 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_ebc96b59a771f13fe060edaa972667a2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_1830c459188af4bcf72364cd4900c567.setIcon(icon_ebc96b59a771f13fe060edaa972667a2);
+        
+    
+        var popup_c71a0342b2fb6eec4c69ebea6e2af86f = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_9bef62e8a94043174b9330e5ecdb1d22 = $(`<div id="html_9bef62e8a94043174b9330e5ecdb1d22" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Iris Brenner<br>     <b>Relation:</b> Grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1940s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_c71a0342b2fb6eec4c69ebea6e2af86f.setContent(html_9bef62e8a94043174b9330e5ecdb1d22);
+            
+        
+
+        marker_1830c459188af4bcf72364cd4900c567.bindPopup(popup_c71a0342b2fb6eec4c69ebea6e2af86f)
+        ;
+
+        
+    
+    
+            var marker_0ba454dfedcbd512da6e7db66c996f97 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_5d118c179df23fb76d9249b0c4935378 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_0ba454dfedcbd512da6e7db66c996f97.setIcon(icon_5d118c179df23fb76d9249b0c4935378);
+        
+    
+        var popup_9e764b6e973f3b6f269db06ffc5ae5e3 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_febf32528fd5c92863b7a6acc68c4d85 = $(`<div id="html_febf32528fd5c92863b7a6acc68c4d85" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Robert Shapiro<br>     <b>Relation:</b> Grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1940s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_9e764b6e973f3b6f269db06ffc5ae5e3.setContent(html_febf32528fd5c92863b7a6acc68c4d85);
+            
+        
+
+        marker_0ba454dfedcbd512da6e7db66c996f97.bindPopup(popup_9e764b6e973f3b6f269db06ffc5ae5e3)
+        ;
+
+        
+    
+    
+            var marker_41290c309d68df5fb68db1285c386830 = L.marker(
+                [59.9311, 30.3609],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_c953c81cac5081ac95ba388f584d480a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#ff7f00", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_41290c309d68df5fb68db1285c386830.setIcon(icon_c953c81cac5081ac95ba388f584d480a);
+        
+    
+        var popup_bc746cc8acdcccdf996b3fd87fb61114 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_e5005e78bf478a4effe2dd0197e7e624 = $(`<div id="html_e5005e78bf478a4effe2dd0197e7e624" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Belle Noll Shapiro<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1910s<br>     <b>Birth Country:</b> Russia<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Russian<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1910s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_bc746cc8acdcccdf996b3fd87fb61114.setContent(html_e5005e78bf478a4effe2dd0197e7e624);
+            
+        
+
+        marker_41290c309d68df5fb68db1285c386830.bindPopup(popup_bc746cc8acdcccdf996b3fd87fb61114)
+        ;
+
+        
+    
+    
+            var marker_4d9a3c25baa7db016ed12391f7024a0c = L.marker(
+                [55.7823547, 49.1242266],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_e69db139b70ebd758d4625af56e54d3d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#ff7f00", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_4d9a3c25baa7db016ed12391f7024a0c.setIcon(icon_e69db139b70ebd758d4625af56e54d3d);
+        
+    
+        var popup_f45bd9c371c8d19506446645dc0199ef = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_4ba37c39ddaaa1e7e9de3ac0b10a5db4 = $(`<div id="html_4ba37c39ddaaa1e7e9de3ac0b10a5db4" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Fayette Simckes; maiden name: Fayette Risikoff<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1900s<br>     <b>Birth Country:</b> Russia<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Kazan, Russia<br>     <b>Primary Language Spoken in Childhood:</b> Russian<br>     <b>Other Spoken Languages:</b> English, Hebrew, Yiddish<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1910s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> Boston, MA<br>     </div>`)[0];
+                popup_f45bd9c371c8d19506446645dc0199ef.setContent(html_4ba37c39ddaaa1e7e9de3ac0b10a5db4);
+            
+        
+
+        marker_4d9a3c25baa7db016ed12391f7024a0c.bindPopup(popup_f45bd9c371c8d19506446645dc0199ef)
+        ;
+
+        
+    
+    
+            var marker_0f7a6d0a140f116b8fa227d087fb4587 = L.marker(
+                [47.4979, 19.0402],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_a9f31098955e99a13039772cf591ed55 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#a65628", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_0f7a6d0a140f116b8fa227d087fb4587.setIcon(icon_a9f31098955e99a13039772cf591ed55);
+        
+    
+        var popup_5cf7d2960ddcc543555e1b54a8a5110b = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_946c5500279cdcd073fed29f562d7417 = $(`<div id="html_946c5500279cdcd073fed29f562d7417" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Jolan Schwartz<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1870s<br>     <b>Birth Country:</b> Hungary<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Hungarian<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_5cf7d2960ddcc543555e1b54a8a5110b.setContent(html_946c5500279cdcd073fed29f562d7417);
+            
+        
+
+        marker_0f7a6d0a140f116b8fa227d087fb4587.bindPopup(popup_5cf7d2960ddcc543555e1b54a8a5110b)
+        ;
+
+        
+    
+    
+            var marker_998407716e3e96312ba569c1b2afd9fd = L.marker(
+                [47.4979, 19.0402],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_abd391d4f3a0713b77e2ebbbec2b6db8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#a65628", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_998407716e3e96312ba569c1b2afd9fd.setIcon(icon_abd391d4f3a0713b77e2ebbbec2b6db8);
+        
+    
+        var popup_44f13422f16bd5e868446ff6742572ba = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_ce0e25a3026dc1beaa7fad619ae20f75 = $(`<div id="html_ce0e25a3026dc1beaa7fad619ae20f75" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Sigmund Blum<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1870s<br>     <b>Birth Country:</b> Hungary<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Hungarian<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_44f13422f16bd5e868446ff6742572ba.setContent(html_ce0e25a3026dc1beaa7fad619ae20f75);
+            
+        
+
+        marker_998407716e3e96312ba569c1b2afd9fd.bindPopup(popup_44f13422f16bd5e868446ff6742572ba)
+        ;
+
+        
+    
+    
+            var marker_5190af4d5e2b0c49167b3ff8f30a3b9a = L.marker(
+                [47.4979, 19.0402],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_2627eb520205ed13af176e65b824c7c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#a65628", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_5190af4d5e2b0c49167b3ff8f30a3b9a.setIcon(icon_2627eb520205ed13af176e65b824c7c9);
+        
+    
+        var popup_1ae278775a0f842cc8b5bf69d21a19cf = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_45ee50d4599a11f471ebe201a39b16bc = $(`<div id="html_45ee50d4599a11f471ebe201a39b16bc" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Regina Rosenbaum<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1860s<br>     <b>Birth Country:</b> Hungary<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Hungarian<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_1ae278775a0f842cc8b5bf69d21a19cf.setContent(html_45ee50d4599a11f471ebe201a39b16bc);
+            
+        
+
+        marker_5190af4d5e2b0c49167b3ff8f30a3b9a.bindPopup(popup_1ae278775a0f842cc8b5bf69d21a19cf)
+        ;
+
+        
+    
+    
+            var marker_ebd7c04cf8ca869319e2b7180cda3721 = L.marker(
+                [48.2081, 16.3713],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_c3d2b8ead3a68262ab34a8ca093705ab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#a65628", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_ebd7c04cf8ca869319e2b7180cda3721.setIcon(icon_c3d2b8ead3a68262ab34a8ca093705ab);
+        
+    
+        var popup_84af5cb8973de9038efb06f02255c019 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_c0123df47adb8c4a9c5891526ec085e6 = $(`<div id="html_c0123df47adb8c4a9c5891526ec085e6" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Morris Grosswirth<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1850s<br>     <b>Birth Country:</b> Austria<br>     <b>Birth Country Detail:</b> An area that was Austria then but Hungary now I think<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Hungarian<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_84af5cb8973de9038efb06f02255c019.setContent(html_c0123df47adb8c4a9c5891526ec085e6);
+            
+        
+
+        marker_ebd7c04cf8ca869319e2b7180cda3721.bindPopup(popup_84af5cb8973de9038efb06f02255c019)
+        ;
+
+        
+    
+    
+            var marker_a4b4aa10573b6d687ae76a55f559fc43 = L.marker(
+                [53.3493795, -6.2605593],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_f881fb4cc927087b90b837e0a857b000 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_a4b4aa10573b6d687ae76a55f559fc43.setIcon(icon_f881fb4cc927087b90b837e0a857b000);
+        
+    
+        var popup_f142a58e8bddd290a0d2fd03af25f526 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_c3da9ef2bfd36fa241b9628d75380ebc = $(`<div id="html_c3da9ef2bfd36fa241b9628d75380ebc" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Bridget Falvey<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1850s<br>     <b>Birth Country:</b> Ireland<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Dublin, Ireland<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> No<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_f142a58e8bddd290a0d2fd03af25f526.setContent(html_c3da9ef2bfd36fa241b9628d75380ebc);
+            
+        
+
+        marker_a4b4aa10573b6d687ae76a55f559fc43.bindPopup(popup_f142a58e8bddd290a0d2fd03af25f526)
+        ;
+
+        
+    
+    
+            var marker_ca33c031bc6bcb905eb2312ed951c5be = L.marker(
+                [43.647265, -79.376031],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_7489bc5ca68c50a953106cf67293d16c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#f781bf", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_ca33c031bc6bcb905eb2312ed951c5be.setIcon(icon_7489bc5ca68c50a953106cf67293d16c);
+        
+    
+        var popup_14e8b1a8929623aa727e4cfab1c3c824 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_122361d0f18ab2eb766583442f911f35 = $(`<div id="html_122361d0f18ab2eb766583442f911f35" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Joseph Elemounge<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1850s<br>     <b>Birth Country:</b> Canada<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Toronto, Canada<br>     <b>Primary Language Spoken in Childhood:</b> French<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> No<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_14e8b1a8929623aa727e4cfab1c3c824.setContent(html_122361d0f18ab2eb766583442f911f35);
+            
+        
+
+        marker_ca33c031bc6bcb905eb2312ed951c5be.bindPopup(popup_14e8b1a8929623aa727e4cfab1c3c824)
+        ;
+
+        
+    
+    
+            var marker_3f1364e57fd79948f82d2723556a3432 = L.marker(
+                [53.3493795, -6.2605593],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_6e4866cceefbf1a67e28ff08d39e9f2b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_3f1364e57fd79948f82d2723556a3432.setIcon(icon_6e4866cceefbf1a67e28ff08d39e9f2b);
+        
+    
+        var popup_b59fcd2a9b59ffd8763f01b4617fe875 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_80c89b84ad28c3325c62f2d9c4d6e526 = $(`<div id="html_80c89b84ad28c3325c62f2d9c4d6e526" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Margaret O’Neill<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> Unknown<br>     <b>Birth Country:</b> Ireland<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Dublin, Ireland<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> No<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_b59fcd2a9b59ffd8763f01b4617fe875.setContent(html_80c89b84ad28c3325c62f2d9c4d6e526);
+            
+        
+
+        marker_3f1364e57fd79948f82d2723556a3432.bindPopup(popup_b59fcd2a9b59ffd8763f01b4617fe875)
+        ;
+
+        
+    
+    
+            var marker_4525fb37e234215b9a46b8eaee472360 = L.marker(
+                [53.3493795, -6.2605593],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_7e95b1d580b5d78060bef06dae88b24f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_4525fb37e234215b9a46b8eaee472360.setIcon(icon_7e95b1d580b5d78060bef06dae88b24f);
+        
+    
+        var popup_f19cae1c90e531def22885bdbd8e5de9 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_85d028612b25fc6713ab1873f80d6c9b = $(`<div id="html_85d028612b25fc6713ab1873f80d6c9b" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> John Reilly<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> Unknown<br>     <b>Birth Country:</b> Ireland<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Dublin, Ireland<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> No<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_f19cae1c90e531def22885bdbd8e5de9.setContent(html_85d028612b25fc6713ab1873f80d6c9b);
+            
+        
+
+        marker_4525fb37e234215b9a46b8eaee472360.bindPopup(popup_f19cae1c90e531def22885bdbd8e5de9)
+        ;
+
+        
+    
+    
+            var marker_a35233d2a1c3ad31cfffcf741e79cd25 = L.marker(
+                [51.2800275, 1.0802533],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_efb9b9bc2f726ffe553e201e49d90e68 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_a35233d2a1c3ad31cfffcf741e79cd25.setIcon(icon_efb9b9bc2f726ffe553e201e49d90e68);
+        
+    
+        var popup_a0bfd29231c3634e5ff99b2fa2477bd5 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_aac1a6774792b956d3e96202a743dd52 = $(`<div id="html_aac1a6774792b956d3e96202a743dd52" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> John Cooke<br>     <b>Relation:</b> too many generations to be precise<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> Before 1850<br>     <b>Birth Country:</b> United Kingdom<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Canterbury, England<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Dutch<br>     <b>Jewish?</b> No<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Before 1880<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> Plymouth, MA<br>     </div>`)[0];
+                popup_a0bfd29231c3634e5ff99b2fa2477bd5.setContent(html_aac1a6774792b956d3e96202a743dd52);
+            
+        
+
+        marker_a35233d2a1c3ad31cfffcf741e79cd25.bindPopup(popup_a0bfd29231c3634e5ff99b2fa2477bd5)
+        ;
+
+        
+    
+    
+            var marker_a6c57b19689d8a1b6c7d5e6f869a50a4 = L.marker(
+                [51.86914, 12.640856],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_b820d5112c8bcfbfcff7adcd52afe7cc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#999999", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_a6c57b19689d8a1b6c7d5e6f869a50a4.setIcon(icon_b820d5112c8bcfbfcff7adcd52afe7cc);
+        
+    
+        var popup_e7887ca0c658a93854c8d001ec30c934 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_419095c0d78f2ab1b8c8bcf03cebb3d9 = $(`<div id="html_419095c0d78f2ab1b8c8bcf03cebb3d9" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Frederick Hunker<br>     <b>Relation:</b> Great-great-great-great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> Before 1850<br>     <b>Birth Country:</b> Germany<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Whittenburg, Germany<br>     <b>Primary Language Spoken in Childhood:</b> German<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> No<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Before 1880<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> Painterville, PA<br>     </div>`)[0];
+                popup_e7887ca0c658a93854c8d001ec30c934.setContent(html_419095c0d78f2ab1b8c8bcf03cebb3d9);
+            
+        
+
+        marker_a6c57b19689d8a1b6c7d5e6f869a50a4.bindPopup(popup_e7887ca0c658a93854c8d001ec30c934)
+        ;
+
+        
+    
+    
+            var marker_7950bd9c4319792b82be0821e1ea3483 = L.marker(
+                [51.86914, 12.640856],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_fbb449ddd604f11ee44d7560b125cb2a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#999999", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_7950bd9c4319792b82be0821e1ea3483.setIcon(icon_fbb449ddd604f11ee44d7560b125cb2a);
+        
+    
+        var popup_aa9f8724e68890a852cd01cb7bd090d9 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_3b1c19db04f3554ed140e46f71cf71c3 = $(`<div id="html_3b1c19db04f3554ed140e46f71cf71c3" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Anna Barbra Dannecker<br>     <b>Relation:</b> Great-great-great-great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> Before 1850<br>     <b>Birth Country:</b> Germany<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Whittenburg, Germany<br>     <b>Primary Language Spoken in Childhood:</b> German<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> No<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Before 1880<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> Painterville, PA<br>     </div>`)[0];
+                popup_aa9f8724e68890a852cd01cb7bd090d9.setContent(html_3b1c19db04f3554ed140e46f71cf71c3);
+            
+        
+
+        marker_7950bd9c4319792b82be0821e1ea3483.bindPopup(popup_aa9f8724e68890a852cd01cb7bd090d9)
+        ;
+
+        
+    
+    
+            var marker_4c82c197cd85c0d29e54f361574ca3ec = L.marker(
+                [48.8534951, 2.3483915],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_d776308470c529472b8be84bed6b300b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#f781bf", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_4c82c197cd85c0d29e54f361574ca3ec.setIcon(icon_d776308470c529472b8be84bed6b300b);
+        
+    
+        var popup_6e2cf448b3f8c01561565ff03c8a68ec = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_49d53f657ed8d9253bb461bb1e9b8c9f = $(`<div id="html_49d53f657ed8d9253bb461bb1e9b8c9f" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Mercy Foizey Nichols (Foizey is her maiden name, Nichols is her married name)<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1870s<br>     <b>Birth Country:</b> France<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Paris, France<br>     <b>Primary Language Spoken in Childhood:</b> French<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> No<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1880s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_6e2cf448b3f8c01561565ff03c8a68ec.setContent(html_49d53f657ed8d9253bb461bb1e9b8c9f);
+            
+        
+
+        marker_4c82c197cd85c0d29e54f361574ca3ec.bindPopup(popup_6e2cf448b3f8c01561565ff03c8a68ec)
+        ;
+
+        
+    
+    
+            var marker_91175b5fb52793c20ed75b576071cd81 = L.marker(
+                [50.4500336, 30.5241361],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_91a280d154e5c4c6c6b90278236c8cda = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#ff7f00", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_91175b5fb52793c20ed75b576071cd81.setIcon(icon_91a280d154e5c4c6c6b90278236c8cda);
+        
+    
+        var popup_0d9ee0bac3e762cf8d9c7db059c2af1b = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_090ef7902efaa6b3dbe3c5353469ec8c = $(`<div id="html_090ef7902efaa6b3dbe3c5353469ec8c" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Rose Bloomberg (maiden name was Perlman, birth name was Raisa but it was changed at Ellis Island)<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1910s<br>     <b>Birth Country:</b> Russia<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Kiev, Ukraine<br>     <b>Primary Language Spoken in Childhood:</b> Russian<br>     <b>Other Spoken Languages:</b> English, Yiddish<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1920s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> Brooklyn, NY<br>     </div>`)[0];
+                popup_0d9ee0bac3e762cf8d9c7db059c2af1b.setContent(html_090ef7902efaa6b3dbe3c5353469ec8c);
+            
+        
+
+        marker_91175b5fb52793c20ed75b576071cd81.bindPopup(popup_0d9ee0bac3e762cf8d9c7db059c2af1b)
+        ;
+
+        
+    
+    
+            var marker_7fa129478161c7f71be19b8c42f10719 = L.marker(
+                [52.2297, 21.0122],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_ee861a2f527018815d41122bfb901224 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_7fa129478161c7f71be19b8c42f10719.setIcon(icon_ee861a2f527018815d41122bfb901224);
+        
+    
+        var popup_20fd52e6dc35f85bc038f5a5a52f5fe4 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_bd5a99e595ed7fb20feb6d3550dff51d = $(`<div id="html_bd5a99e595ed7fb20feb6d3550dff51d" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Anna Gertrude Goldman (Yiddish name: Genendel)<br>     <b>Relation:</b> Great-great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> Unknown<br>     <b>Birth Country:</b> Poland<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Polish<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> Des Moines, IA<br>     </div>`)[0];
+                popup_20fd52e6dc35f85bc038f5a5a52f5fe4.setContent(html_bd5a99e595ed7fb20feb6d3550dff51d);
+            
+        
+
+        marker_7fa129478161c7f71be19b8c42f10719.bindPopup(popup_20fd52e6dc35f85bc038f5a5a52f5fe4)
+        ;
+
+        
+    
+    
+            var marker_c84cc20f8e4994ec4dea8ce0c0b73f7d = L.marker(
+                [41.5868654, -93.6249494],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_2cfa2ebbf85416fda1fe5d2318490c39 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_c84cc20f8e4994ec4dea8ce0c0b73f7d.setIcon(icon_2cfa2ebbf85416fda1fe5d2318490c39);
+        
+    
+        var popup_14495306ab5c4664a575abdd224cd1f4 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_8ac8a92c8a29f192630147bba950e2ad = $(`<div id="html_8ac8a92c8a29f192630147bba950e2ad" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Maiden name: Hilda Goldman, Married name: Hilda Glasser, Hebrew name: Hagar (pronounced HUG-ar), Nicknames: Huggie, Hugs<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1900s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Des Moines, Iowa<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Chicago, IL<br>     </div>`)[0];
+                popup_14495306ab5c4664a575abdd224cd1f4.setContent(html_8ac8a92c8a29f192630147bba950e2ad);
+            
+        
+
+        marker_c84cc20f8e4994ec4dea8ce0c0b73f7d.bindPopup(popup_14495306ab5c4664a575abdd224cd1f4)
+        ;
+
+        
+    
+    
+            var marker_0dbdcc8f98a99b5190f202e08cea29fa = L.marker(
+                [53.3493795, -6.2605593],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_28c8155857f4b364867ec1019c5cc044 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_0dbdcc8f98a99b5190f202e08cea29fa.setIcon(icon_28c8155857f4b364867ec1019c5cc044);
+        
+    
+        var popup_423a6522ebc277ea3d6f33ee6cbea780 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_7fcd6a36e55f4161179b458af52bd664 = $(`<div id="html_7fcd6a36e55f4161179b458af52bd664" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Name: Julius J. Glasser, Nickname: Yuddie<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1900s<br>     <b>Birth Country:</b> Ireland<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Dublin, Ireland<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Yiddish, Had an Irish accent. Unclear if spoke other languages.<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1900s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_423a6522ebc277ea3d6f33ee6cbea780.setContent(html_7fcd6a36e55f4161179b458af52bd664);
+            
+        
+
+        marker_0dbdcc8f98a99b5190f202e08cea29fa.bindPopup(popup_423a6522ebc277ea3d6f33ee6cbea780)
+        ;
+
+        
+    
+    
+            var marker_c96409c42ca80ad88f357b6bb73dcce5 = L.marker(
+                [52.2297, 21.0122],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_56ac12ce20c723753c8f6a3549ae1859 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_c96409c42ca80ad88f357b6bb73dcce5.setIcon(icon_56ac12ce20c723753c8f6a3549ae1859);
+        
+    
+        var popup_6cc5948282a09538139b7b3fa0bce1e7 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_bdf38eec9d685a2e39e28ebdc1fa5678 = $(`<div id="html_bdf38eec9d685a2e39e28ebdc1fa5678" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Dora (Dvorah) Mack<br>     <b>Relation:</b> Great-great-great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1880s<br>     <b>Birth Country:</b> Poland<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1900s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_6cc5948282a09538139b7b3fa0bce1e7.setContent(html_bdf38eec9d685a2e39e28ebdc1fa5678);
+            
+        
+
+        marker_c96409c42ca80ad88f357b6bb73dcce5.bindPopup(popup_6cc5948282a09538139b7b3fa0bce1e7)
+        ;
+
+        
+    
+    
+            var marker_a607992c2c61d1db271327e5feb29fd8 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_9350881da7d9ae85047a5b23948d158e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#984ea3", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_a607992c2c61d1db271327e5feb29fd8.setIcon(icon_9350881da7d9ae85047a5b23948d158e);
+        
+    
+        var popup_564fafdcd8810c74c2f37cff343b0e8d = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_7e9e73878b62622933a860e65f05fb67 = $(`<div id="html_7e9e73878b62622933a860e65f05fb67" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Helen B Cohen (nee Umschweif)<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1900s<br>     <b>Birth Country:</b> United States<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> New York, NY<br>     <b>Primary Language Spoken in Childhood:</b> English<br>     <b>Other Spoken Languages:</b> Yiddish<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> No<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> Unknown<br>     </div>`)[0];
+                popup_564fafdcd8810c74c2f37cff343b0e8d.setContent(html_7e9e73878b62622933a860e65f05fb67);
+            
+        
+
+        marker_a607992c2c61d1db271327e5feb29fd8.bindPopup(popup_564fafdcd8810c74c2f37cff343b0e8d)
+        ;
+
+        
+    
+    
+            var marker_c71bba0522449ede71ebb169c169d9c4 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_6d4bcb892d45b03e4e9c9fa39028969f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#377eb8", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_c71bba0522449ede71ebb169c169d9c4.setIcon(icon_6d4bcb892d45b03e4e9c9fa39028969f);
+        
+    
+        var popup_37e7bb6b6c8de5ec9fa2de1cfb63b687 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_b418dc819eaf2087dc03376f184614a7 = $(`<div id="html_b418dc819eaf2087dc03376f184614a7" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Edward Cohen<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1900s<br>     <b>Birth Country:</b> Romania<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Unknown<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_37e7bb6b6c8de5ec9fa2de1cfb63b687.setContent(html_b418dc819eaf2087dc03376f184614a7);
+            
+        
+
+        marker_c71bba0522449ede71ebb169c169d9c4.bindPopup(popup_37e7bb6b6c8de5ec9fa2de1cfb63b687)
+        ;
+
+        
+    
+    
+            var marker_6ac78774ee811926777a8ab9eec68f13 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_06a8eef9d73d75088a380bfc3299d7c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#377eb8", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_6ac78774ee811926777a8ab9eec68f13.setIcon(icon_06a8eef9d73d75088a380bfc3299d7c9);
+        
+    
+        var popup_7d4e72403cf2fddce0ad7cdcb107121f = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_6a3e5369e25d1c97be8152328cde3bdf = $(`<div id="html_6a3e5369e25d1c97be8152328cde3bdf" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Joseph Martin<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1900s<br>     <b>Birth Country:</b> Hungary<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Unknown<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_7d4e72403cf2fddce0ad7cdcb107121f.setContent(html_6a3e5369e25d1c97be8152328cde3bdf);
+            
+        
+
+        marker_6ac78774ee811926777a8ab9eec68f13.bindPopup(popup_7d4e72403cf2fddce0ad7cdcb107121f)
+        ;
+
+        
+    
+    
+            var marker_34667b78e0e66e6fe18a8b5043fa4886 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_e9d2cbc7422d42eae644f25ee44adc97 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#377eb8", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_34667b78e0e66e6fe18a8b5043fa4886.setIcon(icon_e9d2cbc7422d42eae644f25ee44adc97);
+        
+    
+        var popup_22153518b8d4aeff12fa1fc7e4aa6b12 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_cb555ae886727b37baf1deacecdd595e = $(`<div id="html_cb555ae886727b37baf1deacecdd595e" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Esther Martin (nee Buntzman)<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1900s<br>     <b>Birth Country:</b> Poland<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Unknown<br>     <b>Other Spoken Languages:</b> English<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_22153518b8d4aeff12fa1fc7e4aa6b12.setContent(html_cb555ae886727b37baf1deacecdd595e);
+            
+        
+
+        marker_34667b78e0e66e6fe18a8b5043fa4886.bindPopup(popup_22153518b8d4aeff12fa1fc7e4aa6b12)
+        ;
+
+        
+    
+    
+            var marker_08c3b0e41ab4abadcaab229ea99b5a19 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_2cfc3a40d5e2320464c5dcea194373f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_08c3b0e41ab4abadcaab229ea99b5a19.setIcon(icon_2cfc3a40d5e2320464c5dcea194373f2);
+        
+    
+        var popup_0b955e505104703a99f2ba2a6cebe537 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_6773faed0d8145f646fa894b80719ef0 = $(`<div id="html_6773faed0d8145f646fa894b80719ef0" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Herman "Chaim" Epstein<br>     <b>Relation:</b> Grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1910s<br>     <b>Birth Country:</b> Poland<br>     <b>Birth Country Detail:</b> Unknown<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> English, Polish<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Yes<br>     <b>Decade Migrated</b> 1920s<br>     <b>Destination Country</b> United States<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_0b955e505104703a99f2ba2a6cebe537.setContent(html_6773faed0d8145f646fa894b80719ef0);
+            
+        
+
+        marker_08c3b0e41ab4abadcaab229ea99b5a19.bindPopup(popup_0b955e505104703a99f2ba2a6cebe537)
+        ;
+
+        
+    
+    
+            var marker_7d27bca193e8e35209b2c86984d82102 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_ca1827374da67007ec1921324aa31327 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_7d27bca193e8e35209b2c86984d82102.setIcon(icon_ca1827374da67007ec1921324aa31327);
+        
+    
+        var popup_32119b161db1109894e90bdb206eafb3 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_327dbae53149ac07378034f66e625ee3 = $(`<div id="html_327dbae53149ac07378034f66e625ee3" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Hyman King<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Male<br>     <b>Birth Decade:</b> 1880s<br>     <b>Birth Country:</b> Unknown<br>     <b>Birth Country Detail:</b> Either he or his parents emigrated from Poland/Russia region<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Not sure<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_32119b161db1109894e90bdb206eafb3.setContent(html_327dbae53149ac07378034f66e625ee3);
+            
+        
+
+        marker_7d27bca193e8e35209b2c86984d82102.bindPopup(popup_32119b161db1109894e90bdb206eafb3)
+        ;
+
+        
+    
+    
+            var marker_a595c652337e665f41a944617fd57632 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(marker_cluster_d2500b210acb0547f701fede0df302b1);
+        
+    
+            var icon_a90a2a7f6bc0e08d519b5eb548924efc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#e41a1c", "markerColor": "white", "prefix": "glyphicon"}
+            );
+            marker_a595c652337e665f41a944617fd57632.setIcon(icon_a90a2a7f6bc0e08d519b5eb548924efc);
+        
+    
+        var popup_8f77fcf7a3fb23cd66b3de26da06ec9c = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_8efb5ae8407d363289802851b5fcf202 = $(`<div id="html_8efb5ae8407d363289802851b5fcf202" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Mamie Delinsky<br>     <b>Relation:</b> Great grandparent<br>     <b>Gender:</b> Female<br>     <b>Birth Decade:</b> 1890s<br>     <b>Birth Country:</b> Unknown<br>     <b>Birth Country Detail:</b> Likely born in Europe. If not her, then parents were from Russia/Poland region.<br>     <b>Birth City:</b> Unknown<br>     <b>Primary Language Spoken in Childhood:</b> Yiddish<br>     <b>Other Spoken Languages:</b> Unknown<br>     <b>Jewish?</b> Yes<br>     <b>Migrated?</b> Not sure<br>     <b>Decade Migrated</b> Unknown<br>     <b>Destination Country</b> Unknown<br>     <b>Destination City</b> New York, NY<br>     </div>`)[0];
+                popup_8f77fcf7a3fb23cd66b3de26da06ec9c.setContent(html_8efb5ae8407d363289802851b5fcf202);
+            
+        
+
+        marker_a595c652337e665f41a944617fd57632.bindPopup(popup_8f77fcf7a3fb23cd66b3de26da06ec9c)
+        ;
+
+        
+    
+    
+            marker_cluster_d2500b210acb0547f701fede0df302b1.addTo(feature_group_4f6e1004d87c068f500c605484483145);
+        
+    
+            feature_group_4f6e1004d87c068f500c605484483145.addTo(map_7bb26bf93ee174f8b3cc7ebc323dfd72);
+        
+    
+            var layer_control_2fb42ce5bf755d4bd75e11b1c18b0894_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_dcf560a8f264f6fabfe8819f1edeaf91,
+                },
+                overlays :  {
+                    "All Markers" : feature_group_4f6e1004d87c068f500c605484483145,
+                },
+            };
+            let layer_control_2fb42ce5bf755d4bd75e11b1c18b0894 = L.control.layers(
+                layer_control_2fb42ce5bf755d4bd75e11b1c18b0894_layers.base_layers,
+                layer_control_2fb42ce5bf755d4bd75e11b1c18b0894_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_7bb26bf93ee174f8b3cc7ebc323dfd72);
+
+        
+</script>
+</html>

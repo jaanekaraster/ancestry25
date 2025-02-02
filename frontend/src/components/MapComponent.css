@@ -1,0 +1,728 @@
+  /* Base Styles */
+  html {
+    font-size: 16px; /* Default font size, can be adjusted for responsiveness */
+  }
+
+  /* Title */
+  h1 {
+    font-size: 1.2rem; /* Use rem for scaling */
+    font-family: 'futura-lt-w01-book', sans-serif;
+    padding: 0rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1rem; /* Use rem for scaling */
+    font-family: 'Calibri';
+    padding: 0rem;
+    text-align: center;
+    margin-top: 0rem;
+  }
+
+  h2 .timeline {
+    font-size: 0.5rem; /* Use rem for scaling */
+    font-family: 'Calibri';
+    padding: 0rem;
+    text-align: center;
+    margin-top: 0rem;
+  }
+
+  h4 {
+    font-size:0.9rem;
+    font-family: 'Calibri';
+    padding: 0rem;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .leaflet-container {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* General Legend Container */
+  .layer-controls-container {
+    position: fixed;
+    padding: 1.5rem;
+    border: 0px solid #ccc;
+    border-radius: 0rem;
+    background-color: #ffffff;
+    z-index: 1001; /* Higher than sidebar */
+    width: 100%;
+    max-width: 100%;
+    max-height: 20%;
+    bottom: 0px; /* Ensure it's visible */
+    left: 0px; /* Adjust to top-left for visibility */
+    transform: none; /* Remove centering */
+  }
+
+  .layer-controls-row1 {
+    display: flex;
+    width: 100%;
+    height: 5%; /* 10% of the screen height */
+    max-height: 10%; /* Ensure it does not exceed the specified height */
+    box-sizing: border-box; /* Includes padding and border in the height calculation */
+  }
+
+  .layer-controls-row1-col1 {
+    flex: 0 0 15%; /* Fixed width of 15% of the row */
+    max-width: 15%;
+    height: 100%;
+    background-color: #e0e0e000;
+  }
+
+  .layer-controls-row1-col2 {
+    flex: 0 0 80%;
+    max-width: 80%;
+    height: 100%;
+    background-color: #e0e0e000;
+  }
+
+  /* Sidebar Styling */
+  .sidebar {
+    position: absolute;
+    top: 0%;
+    width: 20%;
+    max-width: 20%;
+    bottom: 0rem;
+    right: 0rem;
+    max-height: 100%;
+    background-color: #ffffff;
+    padding: 1rem;
+    z-index: 2000;
+    overflow-y: auto;
+    border: 0px solid #ccc;
+    border-radius: 0rem;
+  }
+
+  /* Sidebar Header */
+  .sidebar h3 {
+    font-size: 1.2rem;
+    margin: 10px 0 10px 0;
+  }
+
+  .sidebar h2 
+  {
+    font-size: 1rem;
+    margin: 10px 0 10px 0;
+  }
+
+  .sidebar p {
+    font-size: 0.8rem;
+    margin: 10px 0 10px 0;
+  }
+
+  .legend-box {
+    display: flex;
+    position: fixed;
+    flex-direction: column; /* Align items vertically */
+    align-items: flex-start; /* Align to the left */
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    width: 18%;
+    max-width:18%;
+    margin-top:6rem;
+    z-index: 10001;
+    background: #ffffff;
+    padding: 10px; /* Optional: add some padding */
+  }
+
+
+  /* Title Section */
+  .legend-header {
+    display:flex;
+    position:fixed;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Align to the left */
+    margin-bottom: 0.5rem;
+    top: 0;
+    padding: 10px;
+    border: 0px solid #ccc;
+    border-radius: 0rem;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 1001;
+    width: 18%;
+    max-width:18%;
+    transform: translateX(0%);
+    margin-top:0rem;
+  }
+
+  /* Logo Section */
+  .legend-logo {
+    text-align: center;
+    margin-bottom: 0rem;
+  }
+
+  .legend-logo img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Color Legend Items */
+  .legend-items {
+    margin-top: 1rem;
+  }
+
+  .legend-items h4 {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    text-align: left; /* Align text to the left */
+    z-index: 10001;
+    cursor: pointer;
+  }
+
+  .legend-color {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+    z-index: 10001;
+  }
+
+  .legend-item.hovered {
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+
+  .legend-item.selected {
+    border: 2px solid #000;
+    background-color: rgba(202, 202, 202, 0.452);
+  }
+
+  /* Timeline Slider */
+  .slider-wrapper {
+    position: relative;
+    width: 90%;
+    height: 50px;
+  }
+
+  .timeline-slider {
+    width: 100%;
+    margin: 0;
+    background: #cac9c9;
+    appearance: none;
+  }
+
+  .timeline-slider::-webkit-slider-thumb {
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #1c5174;
+    cursor: pointer;
+  }
+
+  .timeline-slider::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+  }
+
+  .tick-marks {
+    position: absolute;
+    top: 1.5rem;
+    width: 100%;
+    height: 1rem;
+    color: #000000;
+  }
+
+  .tick {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  .tick:hover {
+    color: #9e2727;
+  }
+
+  .tick-label {
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+
+  .tick.active .tick-label {
+    color: #000000;
+    font-weight: bold;
+  }
+
+  /* Sidebar Line Segment Styling */
+  .line-segment {
+    display: flex;
+    align-items: center; /* Align the points (circles) to the line */
+    justify-content: space-between; /* Space between Point A and Point B */
+    position: relative;
+    padding-top: 30px;
+    padding: 50px 90px; /* Add vertical padding to make room for labels */
+    margin: 10px 0; /* Increase margin to separate from subsequent text */
+}
+
+.line {
+    flex-grow: 1;
+    height: 4px; /* Thickness of the line */
+    background-color: black;
+    position: relative;
+    margin: 0 10px; /* Space between points */
+}
+
+/* Adding an arrowhead at the end of the line */
+.line::after {
+    content: "";
+    position: absolute;
+    right: -10px; /* Position the arrow at the right end */
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg); /* Keep it aligned */
+    border-left: 10px solid black; /* Arrow color */
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+  .point {
+    position: relative; /* Labels are positioned relative to this */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .point-circle {
+    width: 12px;
+    height: 12px;
+    background-color: #000;
+    border-radius: 50%;
+    z-index: 1; /* Ensure it stays on top */
+  }
+
+  .point-label.above {
+    position: absolute;
+    top: -30px; /* Adjust as needed */
+    text-align: center;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .point-label.below {
+    position: absolute;
+    top: 30px; /* Adjust as needed */
+    text-align: center;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+
+  .show-all-button {
+    margin-top: 10px;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    background-color: #1c5174;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .show-all-button.active {
+    background-color: #d1e7ff;
+    border: 1px solid #1c5174;
+  }
+
+  .show-all-button:hover {
+    background-color: #49b8b3;
+  }
+
+  .button-link {
+    margin-top: 10px;
+    padding: 0px 2px;
+    background-color: #186ea800;
+    color: #1c5174;
+    border: none;
+    cursor: pointer;
+    font-size: 0.7rem;
+  }
+
+  .button-link:hover {
+    background-color: #2ea5c9;
+  }
+
+
+  @media only screen and (max-width: 768px) {
+
+    /* Title Section */
+  .legend-header {
+    display:flex;
+    position:fixed;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Align to the left */
+    margin-bottom: 0.5rem;
+    top: 0;
+    padding: 10px;
+    border: 0px solid #ccc;
+    border-radius: 0rem;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 1001;
+    width: 100%;
+    max-width:100%;
+    transform: translateX(0%);
+    margin-top:0rem;
+  }
+
+    /* Logo Section */
+    .legend-logo {
+      text-align: center;
+      align-items: center;
+      margin-bottom: 0rem;
+      max-height:10%;
+      height: 3rem;
+      max-width: 100%;
+    }
+
+    .legend-logo img {
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      max-height:100%;
+    }
+      
+      /* Title */
+    h1 {
+      font-size: 1rem; /* Use rem for scaling */
+      font-family: 'futura-lt-w01-book', sans-serif;
+      padding: 0rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 0.7rem; /* Use rem for scaling */
+      font-family: 'Calibri';
+      padding: 0rem;
+      text-align: center;
+      margin-top: 0rem;
+    }
+
+    h4 {
+      font-size:0.9rem;
+      font-family: 'Calibri';
+      padding: 0rem;
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+    }
+
+    .legend-box {
+      display: flex;
+      position: fixed;
+      flex-direction: column; /* Align items vertically */
+      align-items: left; /* Align to the center */
+      margin-bottom: 0.5rem;
+      font-size: 0.8rem;
+      width:100%;
+      max-width:100%;
+      margin-top:5.5rem;
+      z-index: 10001;
+      background: #ffffff;
+      padding: 10px; /* Optional: add some padding */
+    }
+
+    .legend-items {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 5px;
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .timeline-slider .tick {
+        transform: scale(0.5);
+    }
+
+    .timeline-slider {
+        margin-top: 20px;
+    }
+
+    /* Dropdown styles for mobile */
+    .legend-dropdown {
+      width: 70%;
+      left: 0%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .legend-item {
+      display: none; /* Hide legend items on mobile */
+    }
+    
+    .show-all-button {
+      margin-left: 10px; /* Spacing between dropdown and button */
+      font-size: 0.9rem;
+      padding: 5px 10px;
+      background-color: #1c5174;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      white-space: nowrap; /* Prevent button text from wrapping */
+    }
+
+    /* Sidebar Styling */
+    .mobile-sidebar {
+      display:flex;
+      position: fixed;
+      flex-direction: column; /* Align items vertically */
+      align-items: flex-start; /* Align to the left */
+      margin-top:0rem;
+      margin-bottom: 0rem;
+      top: 62%;
+      left:0%;
+      width: 100%;
+      max-width: 100%;
+      max-height: 30%;
+      background-color: #d0d0d0;
+      padding: 0rem 0.5rem;
+      z-index: 2000;
+      overflow-y: auto;
+      border: 0px solid #ccc;
+      border-radius: 0rem;
+    }
+
+    /* Sidebar Header */
+    .mobile-sidebar h2 
+    {
+      font-size: 0.8rem;
+      text-align:left;
+      margin: 0px 0 0px 0;
+    }
+
+    .mobile-sidebar h3 {
+      font-size: 1rem;
+      margin: 10px 0 0px 0;
+      max-width:100%;
+    }
+
+    .mobile-sidebar p {
+      font-size: 0.6rem;
+      text-align:left;
+      margin: 0px 0 0px 0;
+    };
+
+
+    /* Sidebar Line Segment Styling */
+    .line-segment {
+      display: flex;
+      align-items: center; /* Align the points (circles) to the line */
+      justify-content: space-between; /* Space between Point A and Point B */
+      position: relative;
+      padding-top: 10px;
+      padding: 40px 50px; /* Add vertical padding to make room for labels */
+      margin: 0px 0; /* Increase margin to separate from subsequent text */
+    }
+    
+    .line {
+      flex-grow: 1; /* Fills space between Point A and Point B */
+      height: 2px;
+      background-color: #000;
+      margin: 0 10px;
+    }
+    
+    .point {
+      position: relative; /* Labels are positioned relative to this */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .point-circle {
+      width: 12px;
+      height: 12px;
+      background-color: #000;
+      border-radius: 50%;
+      z-index: 1; /* Ensure it stays on top */
+    }
+
+    .point-header {
+      font-weight: bold;
+      text-align: center;
+      top: -10px; /* Adjust as needed */
+    }
+
+    .point-label.above {
+      position: absolute;
+      top: -30px; /* Adjust as needed */
+      text-align: center;
+      font-size: 0.6rem;
+      white-space: nowrap;
+    }
+    
+    .point-label.below {
+      position: absolute;
+      top: 30px; /* Adjust as needed */
+      text-align: center;
+      font-size: 0.6rem;
+      white-space: nowrap;
+    }
+    
+    .button-link {
+      margin-top: 0px;
+      padding: 0px 0px;
+      background-color: #186ea800;
+      color: #1c5174;
+      border: none;
+      cursor: pointer;
+      font-size: 0.7rem;
+    }
+
+    /* Timeline Slider */
+  .slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 50px;
+  }
+
+  .timeline-slider {
+    width: 100%;
+    margin: 0;
+    background: #cac9c9;
+    appearance: none;
+  }
+
+  .timeline-slider::-webkit-slider-thumb {
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #1c5174;
+    cursor: pointer;
+  }
+
+  .timeline-slider::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+  }
+
+  .tick-marks {
+    position: absolute;
+    top: 1.5rem;
+    width: 100%;
+    height: 1rem;
+    color: #000000;
+  }
+
+  .tick {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    transform: translateX(-50%);
+    transform: rotate(-45deg);
+
+  }
+
+  .tick:hover {
+    color: #9e2727;
+  }
+
+  .tick-label {
+    font-size: 10px;
+    margin-top: 5px;
+    transform: rotate(45deg); /* Rotate text 45 degrees */
+    transform-origin: left bottom; /* Adjust origin for better alignment */
+    white-space: normal; /* Prevent text from wrapping */
+    word-break: break-word; /* Break words if necessary */
+    line-height: 1.2; /* Adjust line spacing for readability */
+  }
+
+  .tick.active .tick-label {
+    color: #000000;
+    font-weight: bold;
+  }
+
+  /* General Legend Container */
+  .layer-controls-container {
+    position: fixed;
+    padding: 1rem;
+    border: 0px solid #ccc;
+    border-radius: 0rem;
+    background-color: #ffffff;
+    z-index: 1001; /* Higher than sidebar */
+    width: 90%;
+    max-width: 100%;
+    max-height: 30%;
+    bottom: 0px; /* Ensure it's visible */
+    left: 0px; /* Adjust to top-left for visibility */
+    transform: none; /* Remove centering */
+  }
+
+  .layer-controls-row1 {
+    display: flex;
+    width: 100%;
+    height: 5%; /* 10% of the screen height */
+    max-height: 10%; /* Ensure it does not exceed the specified height */
+    box-sizing: border-box; /* Includes padding and border in the height calculation */
+  }
+
+  .layer-controls-row1-col1 {
+    flex: 0 0 15%; /* Fixed width of 15% of the row */
+    max-width: 15%;
+    height: 100%;
+    background-color: #e0e0e000;
+  }
+
+  .layer-controls-row1-col2 {
+    flex: 0 0 80%;
+    max-width: 80%;
+    height: 100%;
+    background-color: #e0e0e000;
+  }
+  .timeline-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+  }
+
+  .arrow-button {
+    background-color: #1c5174;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .arrow-button.left {
+    left: 0;
+  }
+
+  .arrow-button.right {
+    right: 0;
+  }
+
+  .timeline-text {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+  }
+
+  }
+
+

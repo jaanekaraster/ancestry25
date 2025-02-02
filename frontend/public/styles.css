@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  legend {
+    font-size: 14px;
+  }
+  
+  .legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    max-height: 100vh; /* Limit height */
+    overflow-y: auto; /* Enable scrolling */
+  }
+  
+  .legend h1,
+  .legend h3 {
+    margin: 0 0 10px;
+  }
+  
+  legend ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  legend li div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  legend label {
+    font-size: 12px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  select {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  /* Custom square cursor */
+.custom-cursor {
+  position: absolute;
+  width: 40px;  /* Width of the square */
+  height: 40px;  /* Height of the square */
+  background-color: rgb(206, 162, 162, 0);  /* Transparent background */
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s ease;
+}
+
+/* Expanded cursor style for a rectangle */
+.custom-cursor.expanded {
+  border-radius: 8px;
+  transition: width 0.2s ease, height 0.2s ease;
+
+}
+
+/* Popup styles */
+.popup {
+  /* display: none; */
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* color: rgba(19, 233, 97, 0.8); */
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: 'verahumana95bold';
+  /* border: 1px solid #ccc; */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+
+.custom-cursor {
+  --triangle-color: #2e9dc9; /* Default triangle color */
+}
+
+/* Corner triangles */
+.custom-cursor::before,
+.custom-cursor::after,
+.custom-cursor .top-right,
+.custom-cursor .bottom-left {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transition: all 0.1s ease-in-out;
+}
+
+/* Top-left triangle */
+.custom-cursor::before {
+  border-width: 10px;
+  border-color: transparent transparent transparent #87ceeb;
+  top: -10px;
+  left: -10px;
+  transform: rotate(-135deg); /* Rotate to face outward */
+  animation: glow 1s infinite alternate; /* Apply the glow animation */
+}
+
+/* Bottom-right triangle */
+.custom-cursor::after {
+  border-width: 10px;
+  border-color: transparent #87ceeb transparent transparent;
+  bottom: -10px;
+  right: -10px;
+  transform: rotate(-135deg); /* Rotate to face outward */
+  animation: glow 1s infinite alternate; /* Apply the glow animation */
+}
+
+/* Additional triangles for all four corners */
+.custom-cursor .top-right {
+  border-width: 10px;
+  border-color: transparent transparent transparent #87ceeb;
+  top: -10px;
+  right: -10px;
+  transform: rotate(-45deg); /* Rotate to face outward */
+  animation: glow 1s infinite alternate; /* Apply the glow animation */
+
+}
+
+.custom-cursor .bottom-left {
+  border-width: 10px;
+  border-color: transparent #87ceeb transparent transparent;
+  bottom: -10px;
+  left: -10px;
+  transform: rotate(-45deg); /* Rotate to face outward */
+  animation: glow 1s infinite alternate; /* Apply the glow animation */
+
+}
+
+/* Glowing effect using drop-shadow on the corner triangles */
+@keyframes glow {
+  0% {
+      filter: drop-shadow(0 0 2px #87ceeb) drop-shadow(0 0 2px #87ceeb) drop-shadow(0 0 2px #87ceeb);
+  }
+  
+}
+
+/* Change triangle colors dynamically using CSS variable */
+.custom-cursor.active::before {
+  border-color: transparent transparent transparent var(--triangle-color); /* Dynamic color */
+}
+
+.custom-cursor.active::after {
+  border-color: transparent var(--triangle-color) transparent transparent; /* Dynamic color */
+}
+
+.custom-cursor.active .top-right {
+  border-color: transparent transparent transparent var(--triangle-color); /* Dynamic color */
+}
+
+.custom-cursor.active .bottom-left {
+  border-color: transparent var(--triangle-color) transparent transparent; /* Dynamic color */
+}
+
+/* Glow animation for active state */
+.custom-cursor.active::before,
+.custom-cursor.active::after,
+.custom-cursor.active .top-right,
+.custom-cursor.active .bottom-left {
+  animation: glow-active 1s infinite alternate; /* New glow effect */
+}
+@keyframes glow-active {
+  0% {
+      filter: drop-shadow(0 0 4px var(--triangle-color)) drop-shadow(0 0 4px var(--triangle-color));
+  }
+  100% {
+      filter: drop-shadow(0 0 8px var(--triangle-color)) drop-shadow(0 0 8px var(--triangle-color));
+  }
+}
+
