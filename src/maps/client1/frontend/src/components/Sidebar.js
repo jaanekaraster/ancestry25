@@ -69,6 +69,7 @@ const Sidebar = ({ sidebarContent }) => {
         <p><strong>Jewish?:</strong> {sidebarContent.jewish_yn}</p>
         <p><strong>Migrated?:</strong> {sidebarContent.migrate_yn}</p>
         <p><strong>Other Info:</strong> {sidebarContent.other_info}</p>
+        <p>*Estimated location if survey response not specific to a city, or city location uncertain</p>
       </div>
     );
   };

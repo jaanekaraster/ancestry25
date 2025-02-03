@@ -41,8 +41,7 @@ app.use(express.static(resolve(__dirname, 'frontend', 'build')));
 app.get('/download-csv', async (req, res) => {
   try {
     const bucketName = 'jlp-ancestry';
-    const key = 'demo/jlp_combined_demo_gen.csv';
-    // const key = 'demo/jlp_combined_demo_jlp.csv';
+    const key = 'group1/sheet25.csv';
 
     const params = {
       Bucket: bucketName,
