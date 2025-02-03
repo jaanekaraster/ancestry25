@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_af33410d36ba15e7bd709793ba9ce512 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_af33410d36ba15e7bd709793ba9ce512" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_af33410d36ba15e7bd709793ba9ce512 = L.map(
+                "map_af33410d36ba15e7bd709793ba9ce512",
+                {
+                    center: [47.679981492592574, -18.228170424074072],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9edf94a0387f00709c71d0f492f02fad = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_9edf94a0387f00709c71d0f492f02fad.addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+            var marker_4da46ef6ffe6c5e7f326fbc5d3b57119 = L.marker(
+                [46.4843023, 30.7322878],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_f6a2ec6de8c0334f82dfcd988295044e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7ef88c05d6583aabb0bb96088783e96a = $(`<div id="html_7ef88c05d6583aabb0bb96088783e96a" style="width: 100.0%; height: 100.0%;">Odessa, Ukraine</div>`)[0];
+                popup_f6a2ec6de8c0334f82dfcd988295044e.setContent(html_7ef88c05d6583aabb0bb96088783e96a);
+            
+        
+
+        marker_4da46ef6ffe6c5e7f326fbc5d3b57119.bindPopup(popup_f6a2ec6de8c0334f82dfcd988295044e)
+        ;
+
+        
+    
+    
+            marker_4da46ef6ffe6c5e7f326fbc5d3b57119.bindTooltip(
+                `<div>
+                     Nettie Nehamovitz (changed to Nettie/Natasha Namowitz at Ellis Island). Married name was Nettie/Natasha Auerbach. Women in my family did not have Hebrew names, they had Yiddish names. Supposedly it was Nucha.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a1fe3363b381bac5a8631062907f139f = L.marker(
+                [44.2085, 27.3137],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_7018b5d17a00c92c8e8e25375e3cd61a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b8af4c5809c067a0bd26959ce2223fdf = $(`<div id="html_b8af4c5809c067a0bd26959ce2223fdf" style="width: 100.0%; height: 100.0%;">Calarasi Romania</div>`)[0];
+                popup_7018b5d17a00c92c8e8e25375e3cd61a.setContent(html_b8af4c5809c067a0bd26959ce2223fdf);
+            
+        
+
+        marker_a1fe3363b381bac5a8631062907f139f.bindPopup(popup_7018b5d17a00c92c8e8e25375e3cd61a)
+        ;
+
+        
+    
+    
+            marker_a1fe3363b381bac5a8631062907f139f.bindTooltip(
+                `<div>
+                     Nathan/Natan Nechamavitz was changed to Nathan Namowitz at Ellis Island. Hebrew name unknown, I would assume it was Natan.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dc1cde67a50dfea86246fa3076682941 = L.marker(
+                [59.9311, 30.3609],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_5464ccc03bd449584bca0b688e31271d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b74ca92ee911913d6560c6cc3f6e497c = $(`<div id="html_b74ca92ee911913d6560c6cc3f6e497c" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_5464ccc03bd449584bca0b688e31271d.setContent(html_b74ca92ee911913d6560c6cc3f6e497c);
+            
+        
+
+        marker_dc1cde67a50dfea86246fa3076682941.bindPopup(popup_5464ccc03bd449584bca0b688e31271d)
+        ;
+
+        
+    
+    
+            marker_dc1cde67a50dfea86246fa3076682941.bindTooltip(
+                `<div>
+                     Pessi Goldstein (Pauline Namowitz, when married and immigrated)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_15b64119a345d6624fa1115950dc2d92 = L.marker(
+                [48.166667, 27.316667],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_d1de3a0a023cbdef4b36b29ee10e7b99 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_302d73720b32136af333109cc023edd3 = $(`<div id="html_302d73720b32136af333109cc023edd3" style="width: 100.0%; height: 100.0%;">Yedinitz, Moldova</div>`)[0];
+                popup_d1de3a0a023cbdef4b36b29ee10e7b99.setContent(html_302d73720b32136af333109cc023edd3);
+            
+        
+
+        marker_15b64119a345d6624fa1115950dc2d92.bindPopup(popup_d1de3a0a023cbdef4b36b29ee10e7b99)
+        ;
+
+        
+    
+    
+            marker_15b64119a345d6624fa1115950dc2d92.bindTooltip(
+                `<div>
+                     Hyman Goodman
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7a79977f23edff99c81cfead6c4cff27 = L.marker(
+                [56.9493977, 24.1051846],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_4826ef6b5bda3c7b1b4ed9d594e41233 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_004766d8a83e234e4e4ce1b12894588b = $(`<div id="html_004766d8a83e234e4e4ce1b12894588b" style="width: 100.0%; height: 100.0%;">Resisca, Latvia</div>`)[0];
+                popup_4826ef6b5bda3c7b1b4ed9d594e41233.setContent(html_004766d8a83e234e4e4ce1b12894588b);
+            
+        
+
+        marker_7a79977f23edff99c81cfead6c4cff27.bindPopup(popup_4826ef6b5bda3c7b1b4ed9d594e41233)
+        ;
+
+        
+    
+    
+            marker_7a79977f23edff99c81cfead6c4cff27.bindTooltip(
+                `<div>
+                     Joseph Held
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f74b99af06ce538130b24506f0aaba73 = L.marker(
+                [56.9493977, 24.1051846],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_084ccb673ff37dfbc7ce13d238807017 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_66e87be481261a700b8d6ebc575329b5 = $(`<div id="html_66e87be481261a700b8d6ebc575329b5" style="width: 100.0%; height: 100.0%;">Riga, Latvia</div>`)[0];
+                popup_084ccb673ff37dfbc7ce13d238807017.setContent(html_66e87be481261a700b8d6ebc575329b5);
+            
+        
+
+        marker_f74b99af06ce538130b24506f0aaba73.bindPopup(popup_084ccb673ff37dfbc7ce13d238807017)
+        ;
+
+        
+    
+    
+            marker_f74b99af06ce538130b24506f0aaba73.bindTooltip(
+                `<div>
+                     Rose Crystal (maiden name) became Rose Held.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_99157e2ca3fd2d93c428308301ec7cbb = L.marker(
+                [41.4849, -73.59212],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_8cf2bd61e9afad8a94dbac4c5d9c6c03 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7bf85642e60ba25f7a0123110b768e41 = $(`<div id="html_7bf85642e60ba25f7a0123110b768e41" style="width: 100.0%; height: 100.0%;">Patterson, NJ</div>`)[0];
+                popup_8cf2bd61e9afad8a94dbac4c5d9c6c03.setContent(html_7bf85642e60ba25f7a0123110b768e41);
+            
+        
+
+        marker_99157e2ca3fd2d93c428308301ec7cbb.bindPopup(popup_8cf2bd61e9afad8a94dbac4c5d9c6c03)
+        ;
+
+        
+    
+    
+            marker_99157e2ca3fd2d93c428308301ec7cbb.bindTooltip(
+                `<div>
+                     Michael Canali
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2e41f0a160862db4c4b4a42ca40a7bde = L.marker(
+                [40.735657, -74.1723667],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_36d75cbf7c87f66dcb598eed903357ed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ae0c9128b7a129ef1874c0e87af0e004 = $(`<div id="html_ae0c9128b7a129ef1874c0e87af0e004" style="width: 100.0%; height: 100.0%;">Newark, NJ</div>`)[0];
+                popup_36d75cbf7c87f66dcb598eed903357ed.setContent(html_ae0c9128b7a129ef1874c0e87af0e004);
+            
+        
+
+        marker_2e41f0a160862db4c4b4a42ca40a7bde.bindPopup(popup_36d75cbf7c87f66dcb598eed903357ed)
+        ;
+
+        
+    
+    
+            marker_2e41f0a160862db4c4b4a42ca40a7bde.bindTooltip(
+                `<div>
+                     Ernest/Ernesto Canali
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9e18851323a692bab3089c3cf959432a = L.marker(
+                [40.735657, -74.1723667],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_7da9353be3a5a1bc8af5867134d6aaca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7910ff2ac30d7b76c790a0e8c75a1f01 = $(`<div id="html_7910ff2ac30d7b76c790a0e8c75a1f01" style="width: 100.0%; height: 100.0%;">Newark, NJ</div>`)[0];
+                popup_7da9353be3a5a1bc8af5867134d6aaca.setContent(html_7910ff2ac30d7b76c790a0e8c75a1f01);
+            
+        
+
+        marker_9e18851323a692bab3089c3cf959432a.bindPopup(popup_7da9353be3a5a1bc8af5867134d6aaca)
+        ;
+
+        
+    
+    
+            marker_9e18851323a692bab3089c3cf959432a.bindTooltip(
+                `<div>
+                     Carmela Morana
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1d17550371fce372510b896bea7fef40 = L.marker(
+                [42.2625621, -71.8018877],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_f93cdda3f7e37cb7dbb8b3df33fc3dc2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1b224732eede36ee18ff5ec9d7193b77 = $(`<div id="html_1b224732eede36ee18ff5ec9d7193b77" style="width: 100.0%; height: 100.0%;">Worcester, MA</div>`)[0];
+                popup_f93cdda3f7e37cb7dbb8b3df33fc3dc2.setContent(html_1b224732eede36ee18ff5ec9d7193b77);
+            
+        
+
+        marker_1d17550371fce372510b896bea7fef40.bindPopup(popup_f93cdda3f7e37cb7dbb8b3df33fc3dc2)
+        ;
+
+        
+    
+    
+            marker_1d17550371fce372510b896bea7fef40.bindTooltip(
+                `<div>
+                     Joseph Eisenberg
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e894bc7ccb94b6c94f93a3159bd127f = L.marker(
+                [41.8755616, -87.6244212],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_e5bfa26aa10e11c2f5ac4e308c6856aa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_242d8795dce94dd5b339e621b38625ff = $(`<div id="html_242d8795dce94dd5b339e621b38625ff" style="width: 100.0%; height: 100.0%;">Chicago, IL</div>`)[0];
+                popup_e5bfa26aa10e11c2f5ac4e308c6856aa.setContent(html_242d8795dce94dd5b339e621b38625ff);
+            
+        
+
+        marker_1e894bc7ccb94b6c94f93a3159bd127f.bindPopup(popup_e5bfa26aa10e11c2f5ac4e308c6856aa)
+        ;
+
+        
+    
+    
+            marker_1e894bc7ccb94b6c94f93a3159bd127f.bindTooltip(
+                `<div>
+                     Arnona Marenof
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a061492bd72eb787f76a77741109a77a = L.marker(
+                [51.5074456, -0.1277653],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_86f9591cc13f632f47238887cc8d2dc9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7a2e15028d4c0edbdd8bec3e6f98e70d = $(`<div id="html_7a2e15028d4c0edbdd8bec3e6f98e70d" style="width: 100.0%; height: 100.0%;">London, UK</div>`)[0];
+                popup_86f9591cc13f632f47238887cc8d2dc9.setContent(html_7a2e15028d4c0edbdd8bec3e6f98e70d);
+            
+        
+
+        marker_a061492bd72eb787f76a77741109a77a.bindPopup(popup_86f9591cc13f632f47238887cc8d2dc9)
+        ;
+
+        
+    
+    
+            marker_a061492bd72eb787f76a77741109a77a.bindTooltip(
+                `<div>
+                     Harry/Tzvi Eisenberg
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fe3aaaed57c62fb3ddee9e7ea508ed85 = L.marker(
+                [50.4500336, 30.5241361],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_d7157696c139e9e9c28dfcc87e90a7de = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8fcc4d78f9b3a3b7a0da5dfd909237fa = $(`<div id="html_8fcc4d78f9b3a3b7a0da5dfd909237fa" style="width: 100.0%; height: 100.0%;">Kiev, Ukraine</div>`)[0];
+                popup_d7157696c139e9e9c28dfcc87e90a7de.setContent(html_8fcc4d78f9b3a3b7a0da5dfd909237fa);
+            
+        
+
+        marker_fe3aaaed57c62fb3ddee9e7ea508ed85.bindPopup(popup_d7157696c139e9e9c28dfcc87e90a7de)
+        ;
+
+        
+    
+    
+            marker_fe3aaaed57c62fb3ddee9e7ea508ed85.bindTooltip(
+                `<div>
+                     Shlomo Marenof (Marienofsky)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a2651a426255dec5ace305a7f119a954 = L.marker(
+                [54.6870458, 25.2829111],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_151c04fa9129fbff6a188586f6073508 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a7ccf16a8cd84671f57c6c06f55757e8 = $(`<div id="html_a7ccf16a8cd84671f57c6c06f55757e8" style="width: 100.0%; height: 100.0%;">Vilnius, Lithuania</div>`)[0];
+                popup_151c04fa9129fbff6a188586f6073508.setContent(html_a7ccf16a8cd84671f57c6c06f55757e8);
+            
+        
+
+        marker_a2651a426255dec5ace305a7f119a954.bindPopup(popup_151c04fa9129fbff6a188586f6073508)
+        ;
+
+        
+    
+    
+            marker_a2651a426255dec5ace305a7f119a954.bindTooltip(
+                `<div>
+                     Hannah Martha Friedman
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_32d95fba76c4f8388469b5308e7d0bb9 = L.marker(
+                [59.9311, 30.3609],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_649155d4fcbf9c1c57decbcab403f494 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32053cb1526859c748c056315e9c40ed = $(`<div id="html_32053cb1526859c748c056315e9c40ed" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_649155d4fcbf9c1c57decbcab403f494.setContent(html_32053cb1526859c748c056315e9c40ed);
+            
+        
+
+        marker_32d95fba76c4f8388469b5308e7d0bb9.bindPopup(popup_649155d4fcbf9c1c57decbcab403f494)
+        ;
+
+        
+    
+    
+            marker_32d95fba76c4f8388469b5308e7d0bb9.bindTooltip(
+                `<div>
+                     Lieb Ladyzhensky (changed to Louis Landin), לב בן נחום ורבקה
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d43926f749c98c9b20b9f21563faf5c6 = L.marker(
+                [52.134722, 23.656944],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_511a7852152fad7430213011f4a5acac = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_88a23ba8c328890a213a10251997e3a6 = $(`<div id="html_88a23ba8c328890a213a10251997e3a6" style="width: 100.0%; height: 100.0%;">Litovsk , Belarus</div>`)[0];
+                popup_511a7852152fad7430213011f4a5acac.setContent(html_88a23ba8c328890a213a10251997e3a6);
+            
+        
+
+        marker_d43926f749c98c9b20b9f21563faf5c6.bindPopup(popup_511a7852152fad7430213011f4a5acac)
+        ;
+
+        
+    
+    
+            marker_d43926f749c98c9b20b9f21563faf5c6.bindTooltip(
+                `<div>
+                     Deborah Klein, nee Katznellenbogen (changed to Katz), דבורה בת ר׳ אהרן שלמה הכהן
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2c0fc3d41b8a415f989fe5b3ff003e69 = L.marker(
+                [53.4, 23.5],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_d5a0d2acaba12c38a28390092128ad55 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0a28d239ee9ad94a195aa1877834285b = $(`<div id="html_0a28d239ee9ad94a195aa1877834285b" style="width: 100.0%; height: 100.0%;">Sakalka, Russia</div>`)[0];
+                popup_d5a0d2acaba12c38a28390092128ad55.setContent(html_0a28d239ee9ad94a195aa1877834285b);
+            
+        
+
+        marker_2c0fc3d41b8a415f989fe5b3ff003e69.bindPopup(popup_d5a0d2acaba12c38a28390092128ad55)
+        ;
+
+        
+    
+    
+            marker_2c0fc3d41b8a415f989fe5b3ff003e69.bindTooltip(
+                `<div>
+                     Moshe Yechezkiel Izak (changed to Morris Haskell Isaacson), משה יחזקאל בן דוב–בער ושרה
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bef9d0bb70efe7bdb0c972e34c3b4433 = L.marker(
+                [50.0619474, 19.9368564],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_5d62d141556d6aafcfb948ab604ed0da = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_491f92473759d99a59ffc04076d23215 = $(`<div id="html_491f92473759d99a59ffc04076d23215" style="width: 100.0%; height: 100.0%;">Krakow, Poland</div>`)[0];
+                popup_5d62d141556d6aafcfb948ab604ed0da.setContent(html_491f92473759d99a59ffc04076d23215);
+            
+        
+
+        marker_bef9d0bb70efe7bdb0c972e34c3b4433.bindPopup(popup_5d62d141556d6aafcfb948ab604ed0da)
+        ;
+
+        
+    
+    
+            marker_bef9d0bb70efe7bdb0c972e34c3b4433.bindTooltip(
+                `<div>
+                     Moses Isserles, הרב משה בן ר׳ ישראל ומלכה
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4d502b6a7c627a5795c94ee89c11f450 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_f1a4f2c5081c93b58a14e7f6c1e6bf4f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0f5770b7afe403492eff29758390ca14 = $(`<div id="html_0f5770b7afe403492eff29758390ca14" style="width: 100.0%; height: 100.0%;">New York, NY</div>`)[0];
+                popup_f1a4f2c5081c93b58a14e7f6c1e6bf4f.setContent(html_0f5770b7afe403492eff29758390ca14);
+            
+        
+
+        marker_4d502b6a7c627a5795c94ee89c11f450.bindPopup(popup_f1a4f2c5081c93b58a14e7f6c1e6bf4f)
+        ;
+
+        
+    
+    
+            marker_4d502b6a7c627a5795c94ee89c11f450.bindTooltip(
+                `<div>
+                     Dorothy "Dot" Cohen (changed to Crane), nee Doliner, דבורה בת ליפא וחנה
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b69f5952d173ede02b74c608bd3709e6 = L.marker(
+                [48.205556, 22.647222],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_4ffbd444c9f8c8f3e6cac2b75854b439 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_717d56a2bfbc84844e1edf24b486776b = $(`<div id="html_717d56a2bfbc84844e1edf24b486776b" style="width: 100.0%; height: 100.0%;">Beregszasz, Hungary</div>`)[0];
+                popup_4ffbd444c9f8c8f3e6cac2b75854b439.setContent(html_717d56a2bfbc84844e1edf24b486776b);
+            
+        
+
+        marker_b69f5952d173ede02b74c608bd3709e6.bindPopup(popup_4ffbd444c9f8c8f3e6cac2b75854b439)
+        ;
+
+        
+    
+    
+            marker_b69f5952d173ede02b74c608bd3709e6.bindTooltip(
+                `<div>
+                     Helen Weiss, nee Gelberman, חיה בת ר׳ יעקב הלבי ורייזעל
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bcfce5a06d2eba0b292116862faf0f0d = L.marker(
+                [50.0012314, 8.2762513],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_6f510a731f64e4fd9f423dbc50ae60fb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e8cbd6ab668800c8e97896837adf053d = $(`<div id="html_e8cbd6ab668800c8e97896837adf053d" style="width: 100.0%; height: 100.0%;">Mainz, Germany</div>`)[0];
+                popup_6f510a731f64e4fd9f423dbc50ae60fb.setContent(html_e8cbd6ab668800c8e97896837adf053d);
+            
+        
+
+        marker_bcfce5a06d2eba0b292116862faf0f0d.bindPopup(popup_6f510a731f64e4fd9f423dbc50ae60fb)
+        ;
+
+        
+    
+    
+            marker_bcfce5a06d2eba0b292116862faf0f0d.bindTooltip(
+                `<div>
+                     Meir Warschler, מאיר
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b8a4b28531b57d70120e3ceccd8b1d40 = L.marker(
+                [46.4843023, 30.7322878],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_1e62e5fa1c292c1a3ad2cc9651e85d82 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c45577b19c5d8b4874ca7772276ddc62 = $(`<div id="html_c45577b19c5d8b4874ca7772276ddc62" style="width: 100.0%; height: 100.0%;">Odessa, Ukraine</div>`)[0];
+                popup_1e62e5fa1c292c1a3ad2cc9651e85d82.setContent(html_c45577b19c5d8b4874ca7772276ddc62);
+            
+        
+
+        marker_b8a4b28531b57d70120e3ceccd8b1d40.bindPopup(popup_1e62e5fa1c292c1a3ad2cc9651e85d82)
+        ;
+
+        
+    
+    
+            marker_b8a4b28531b57d70120e3ceccd8b1d40.bindTooltip(
+                `<div>
+                     Samuel "Sam" Schneiderman (changed to Snyder), שלמה בר נחמן ואסתר
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e4cbbeb0d28aa48c2dcab8a343155f0d = L.marker(
+                [40.735657, -74.1723667],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_254188db0e826ce663659989d268967e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c37282859305fea96959b1a07fa9af84 = $(`<div id="html_c37282859305fea96959b1a07fa9af84" style="width: 100.0%; height: 100.0%;">Newark, NJ</div>`)[0];
+                popup_254188db0e826ce663659989d268967e.setContent(html_c37282859305fea96959b1a07fa9af84);
+            
+        
+
+        marker_e4cbbeb0d28aa48c2dcab8a343155f0d.bindPopup(popup_254188db0e826ce663659989d268967e)
+        ;
+
+        
+    
+    
+            marker_e4cbbeb0d28aa48c2dcab8a343155f0d.bindTooltip(
+                `<div>
+                     Lynn Starr; maiden name: Lynn Shapiro; Hebrew name: chaya
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2fc4df14529a542567fd6d4d6a0c5da1 = L.marker(
+                [41.4996574, -81.6936772],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_54fb04a50c10a977f0a6c5f347966830 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dee6bf7ff41079732b19d8e0e3e889fc = $(`<div id="html_dee6bf7ff41079732b19d8e0e3e889fc" style="width: 100.0%; height: 100.0%;">Cleveland, OH</div>`)[0];
+                popup_54fb04a50c10a977f0a6c5f347966830.setContent(html_dee6bf7ff41079732b19d8e0e3e889fc);
+            
+        
+
+        marker_2fc4df14529a542567fd6d4d6a0c5da1.bindPopup(popup_54fb04a50c10a977f0a6c5f347966830)
+        ;
+
+        
+    
+    
+            marker_2fc4df14529a542567fd6d4d6a0c5da1.bindTooltip(
+                `<div>
+                     Alexander Starr; Hebrew name: Aharon Pesach
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8f3a4a2de5da356e66c3d4237a31d12a = L.marker(
+                [42.525746, -70.887703],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_856addf74e24d6d5969bf2b2fcb426a8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cbf4774dd68891571cc8ceeb42de221a = $(`<div id="html_cbf4774dd68891571cc8ceeb42de221a" style="width: 100.0%; height: 100.0%;">Salem, MA</div>`)[0];
+                popup_856addf74e24d6d5969bf2b2fcb426a8.setContent(html_cbf4774dd68891571cc8ceeb42de221a);
+            
+        
+
+        marker_8f3a4a2de5da356e66c3d4237a31d12a.bindPopup(popup_856addf74e24d6d5969bf2b2fcb426a8)
+        ;
+
+        
+    
+    
+            marker_8f3a4a2de5da356e66c3d4237a31d12a.bindTooltip(
+                `<div>
+                     Naomi Starr; maiden name: Naomi Simkes; hebrew name: Naomi
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_09f10f427b756d6e1c5b2873a72a3987 = L.marker(
+                [42.3554334, -71.060511],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_38171262cf00dd32c503c08f81239757 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3bfec8dbc8dd3bd2f25ea7877c247dd7 = $(`<div id="html_3bfec8dbc8dd3bd2f25ea7877c247dd7" style="width: 100.0%; height: 100.0%;">Boston, MA</div>`)[0];
+                popup_38171262cf00dd32c503c08f81239757.setContent(html_3bfec8dbc8dd3bd2f25ea7877c247dd7);
+            
+        
+
+        marker_09f10f427b756d6e1c5b2873a72a3987.bindPopup(popup_38171262cf00dd32c503c08f81239757)
+        ;
+
+        
+    
+    
+            marker_09f10f427b756d6e1c5b2873a72a3987.bindTooltip(
+                `<div>
+                     Jason Starr
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6aebfd69dd718ae5de9b5ea8825fbd9b = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_ed6196a3a6d4c57224d8f699eb97341c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_41be8bc977c8c5bf33cbe42ab50042ec = $(`<div id="html_41be8bc977c8c5bf33cbe42ab50042ec" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_ed6196a3a6d4c57224d8f699eb97341c.setContent(html_41be8bc977c8c5bf33cbe42ab50042ec);
+            
+        
+
+        marker_6aebfd69dd718ae5de9b5ea8825fbd9b.bindPopup(popup_ed6196a3a6d4c57224d8f699eb97341c)
+        ;
+
+        
+    
+    
+            marker_6aebfd69dd718ae5de9b5ea8825fbd9b.bindTooltip(
+                `<div>
+                     Iris Brenner
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6f5c1c93148dbf188bcd54a28647abf1 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_1f1ff4552611bfd54407f06bb0403ccf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e7064435650ab516e8457ab641ccda40 = $(`<div id="html_e7064435650ab516e8457ab641ccda40" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_1f1ff4552611bfd54407f06bb0403ccf.setContent(html_e7064435650ab516e8457ab641ccda40);
+            
+        
+
+        marker_6f5c1c93148dbf188bcd54a28647abf1.bindPopup(popup_1f1ff4552611bfd54407f06bb0403ccf)
+        ;
+
+        
+    
+    
+            marker_6f5c1c93148dbf188bcd54a28647abf1.bindTooltip(
+                `<div>
+                     Robert Shapiro
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_40435e26f839d28ea634a80909a03c0b = L.marker(
+                [59.9311, 30.3609],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_8e35cb15e3a0e2ea896cac0b0bd3eb9e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a6bcbd78728e7f2f92704a6e706b744b = $(`<div id="html_a6bcbd78728e7f2f92704a6e706b744b" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_8e35cb15e3a0e2ea896cac0b0bd3eb9e.setContent(html_a6bcbd78728e7f2f92704a6e706b744b);
+            
+        
+
+        marker_40435e26f839d28ea634a80909a03c0b.bindPopup(popup_8e35cb15e3a0e2ea896cac0b0bd3eb9e)
+        ;
+
+        
+    
+    
+            marker_40435e26f839d28ea634a80909a03c0b.bindTooltip(
+                `<div>
+                     Belle Noll Shapiro
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_20ededbe72ba064f9d30784b800b5830 = L.marker(
+                [55.7823547, 49.1242266],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_b7d524c6cb3ea1a19df5541973a7af9e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ec1d7f59c0b3574f64bc4f8ef13e2436 = $(`<div id="html_ec1d7f59c0b3574f64bc4f8ef13e2436" style="width: 100.0%; height: 100.0%;">Kazan, Russia</div>`)[0];
+                popup_b7d524c6cb3ea1a19df5541973a7af9e.setContent(html_ec1d7f59c0b3574f64bc4f8ef13e2436);
+            
+        
+
+        marker_20ededbe72ba064f9d30784b800b5830.bindPopup(popup_b7d524c6cb3ea1a19df5541973a7af9e)
+        ;
+
+        
+    
+    
+            marker_20ededbe72ba064f9d30784b800b5830.bindTooltip(
+                `<div>
+                     Fayette Simckes; maiden name: Fayette Risikoff
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6c6ed866898fa9cda65190886da63a62 = L.marker(
+                [47.4979, 19.0402],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_05b2228f842dc78b48cbcb69c2921341 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eb0b7599e7e3287115113b1a78f79b34 = $(`<div id="html_eb0b7599e7e3287115113b1a78f79b34" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_05b2228f842dc78b48cbcb69c2921341.setContent(html_eb0b7599e7e3287115113b1a78f79b34);
+            
+        
+
+        marker_6c6ed866898fa9cda65190886da63a62.bindPopup(popup_05b2228f842dc78b48cbcb69c2921341)
+        ;
+
+        
+    
+    
+            marker_6c6ed866898fa9cda65190886da63a62.bindTooltip(
+                `<div>
+                     Jolan Schwartz
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2757d622bb04590653ca51fad3e58f78 = L.marker(
+                [47.4979, 19.0402],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_0bb57e1994f6ec4dbe6ec7cff62c1ddd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5505384c5da37cee1846ef3524333e4a = $(`<div id="html_5505384c5da37cee1846ef3524333e4a" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_0bb57e1994f6ec4dbe6ec7cff62c1ddd.setContent(html_5505384c5da37cee1846ef3524333e4a);
+            
+        
+
+        marker_2757d622bb04590653ca51fad3e58f78.bindPopup(popup_0bb57e1994f6ec4dbe6ec7cff62c1ddd)
+        ;
+
+        
+    
+    
+            marker_2757d622bb04590653ca51fad3e58f78.bindTooltip(
+                `<div>
+                     Sigmund Blum
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_77f346ffd475dd4657c5dc5240b789f6 = L.marker(
+                [47.4979, 19.0402],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_627b5806b0bb6b539288f92952059306 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_149499828b42d15381a2201af02cde31 = $(`<div id="html_149499828b42d15381a2201af02cde31" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_627b5806b0bb6b539288f92952059306.setContent(html_149499828b42d15381a2201af02cde31);
+            
+        
+
+        marker_77f346ffd475dd4657c5dc5240b789f6.bindPopup(popup_627b5806b0bb6b539288f92952059306)
+        ;
+
+        
+    
+    
+            marker_77f346ffd475dd4657c5dc5240b789f6.bindTooltip(
+                `<div>
+                     Regina Rosenbaum
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0485adc95c1244a705dca887b84cca82 = L.marker(
+                [48.2081, 16.3713],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_34f03c7577b258517cce551404acb7d7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_26e3cc4c8774b01215243bbf8e1168e5 = $(`<div id="html_26e3cc4c8774b01215243bbf8e1168e5" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_34f03c7577b258517cce551404acb7d7.setContent(html_26e3cc4c8774b01215243bbf8e1168e5);
+            
+        
+
+        marker_0485adc95c1244a705dca887b84cca82.bindPopup(popup_34f03c7577b258517cce551404acb7d7)
+        ;
+
+        
+    
+    
+            marker_0485adc95c1244a705dca887b84cca82.bindTooltip(
+                `<div>
+                     Morris Grosswirth
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3cd6f08213e367d47ccd90c11cc3fdea = L.marker(
+                [53.3493795, -6.2605593],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_1442c951d51e551d4751323b4e35d7c2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_88bedb7ebf26f9ca3a4a962a8e91421b = $(`<div id="html_88bedb7ebf26f9ca3a4a962a8e91421b" style="width: 100.0%; height: 100.0%;">Dublin, Ireland</div>`)[0];
+                popup_1442c951d51e551d4751323b4e35d7c2.setContent(html_88bedb7ebf26f9ca3a4a962a8e91421b);
+            
+        
+
+        marker_3cd6f08213e367d47ccd90c11cc3fdea.bindPopup(popup_1442c951d51e551d4751323b4e35d7c2)
+        ;
+
+        
+    
+    
+            marker_3cd6f08213e367d47ccd90c11cc3fdea.bindTooltip(
+                `<div>
+                     Bridget Falvey
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_09e34273651261d71d0338b7922f0154 = L.marker(
+                [43.647265, -79.376031],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_02d28c5b1140e44b6a2eef90095f9a93 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6a557c12b7a6f2a32e1ba5571d0314b2 = $(`<div id="html_6a557c12b7a6f2a32e1ba5571d0314b2" style="width: 100.0%; height: 100.0%;">Toronto, Canada</div>`)[0];
+                popup_02d28c5b1140e44b6a2eef90095f9a93.setContent(html_6a557c12b7a6f2a32e1ba5571d0314b2);
+            
+        
+
+        marker_09e34273651261d71d0338b7922f0154.bindPopup(popup_02d28c5b1140e44b6a2eef90095f9a93)
+        ;
+
+        
+    
+    
+            marker_09e34273651261d71d0338b7922f0154.bindTooltip(
+                `<div>
+                     Joseph Elemounge
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9e9b63a22d11c42c7b0fbb3e0e1681db = L.marker(
+                [53.3493795, -6.2605593],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_40536eedea463f5040ccad45c50882b4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dfcf82feef07649d4e5a42e67e66db74 = $(`<div id="html_dfcf82feef07649d4e5a42e67e66db74" style="width: 100.0%; height: 100.0%;">Dublin, Ireland</div>`)[0];
+                popup_40536eedea463f5040ccad45c50882b4.setContent(html_dfcf82feef07649d4e5a42e67e66db74);
+            
+        
+
+        marker_9e9b63a22d11c42c7b0fbb3e0e1681db.bindPopup(popup_40536eedea463f5040ccad45c50882b4)
+        ;
+
+        
+    
+    
+            marker_9e9b63a22d11c42c7b0fbb3e0e1681db.bindTooltip(
+                `<div>
+                     Margaret O’Neill
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5aca45e832b229bda97f9e95923fb37c = L.marker(
+                [53.3493795, -6.2605593],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_9e8832a5dd4b9e50cee807634c1ceec1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_021d5bec7414559efde4eed642036dc5 = $(`<div id="html_021d5bec7414559efde4eed642036dc5" style="width: 100.0%; height: 100.0%;">Dublin, Ireland</div>`)[0];
+                popup_9e8832a5dd4b9e50cee807634c1ceec1.setContent(html_021d5bec7414559efde4eed642036dc5);
+            
+        
+
+        marker_5aca45e832b229bda97f9e95923fb37c.bindPopup(popup_9e8832a5dd4b9e50cee807634c1ceec1)
+        ;
+
+        
+    
+    
+            marker_5aca45e832b229bda97f9e95923fb37c.bindTooltip(
+                `<div>
+                     John Reilly
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0cfff545286830bd42f2361b65c9aa60 = L.marker(
+                [51.2800275, 1.0802533],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_a45a38aa3788864e20a4c6a4faf34f91 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_54c1c57bd0607b69841831ab86724682 = $(`<div id="html_54c1c57bd0607b69841831ab86724682" style="width: 100.0%; height: 100.0%;">Canterbury, England</div>`)[0];
+                popup_a45a38aa3788864e20a4c6a4faf34f91.setContent(html_54c1c57bd0607b69841831ab86724682);
+            
+        
+
+        marker_0cfff545286830bd42f2361b65c9aa60.bindPopup(popup_a45a38aa3788864e20a4c6a4faf34f91)
+        ;
+
+        
+    
+    
+            marker_0cfff545286830bd42f2361b65c9aa60.bindTooltip(
+                `<div>
+                     John Cooke
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_75758bf176048052f9afb451dee95017 = L.marker(
+                [51.86914, 12.640856],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_581025c4048905dacc8cc492b3641de3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_25ece34fffd0834bc821d44b5f57072e = $(`<div id="html_25ece34fffd0834bc821d44b5f57072e" style="width: 100.0%; height: 100.0%;">Whittenburg, Germany</div>`)[0];
+                popup_581025c4048905dacc8cc492b3641de3.setContent(html_25ece34fffd0834bc821d44b5f57072e);
+            
+        
+
+        marker_75758bf176048052f9afb451dee95017.bindPopup(popup_581025c4048905dacc8cc492b3641de3)
+        ;
+
+        
+    
+    
+            marker_75758bf176048052f9afb451dee95017.bindTooltip(
+                `<div>
+                     Frederick Hunker
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_61869ab60db306b7de6f65ba089ca900 = L.marker(
+                [51.86914, 12.640856],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_082a00ccfd337c4c3d0be81409963049 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b40d97b4ad18d65132022be3c270a4d1 = $(`<div id="html_b40d97b4ad18d65132022be3c270a4d1" style="width: 100.0%; height: 100.0%;">Whittenburg, Germany</div>`)[0];
+                popup_082a00ccfd337c4c3d0be81409963049.setContent(html_b40d97b4ad18d65132022be3c270a4d1);
+            
+        
+
+        marker_61869ab60db306b7de6f65ba089ca900.bindPopup(popup_082a00ccfd337c4c3d0be81409963049)
+        ;
+
+        
+    
+    
+            marker_61869ab60db306b7de6f65ba089ca900.bindTooltip(
+                `<div>
+                     Anna Barbra Dannecker
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af3e6a3058374e3078f3c1d1f00bf5c0 = L.marker(
+                [48.8534951, 2.3483915],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_c3395ebd06b9d5e258ba56679343b452 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_70ba2d61e59e3aff5545346eafbd10fd = $(`<div id="html_70ba2d61e59e3aff5545346eafbd10fd" style="width: 100.0%; height: 100.0%;">Paris, France</div>`)[0];
+                popup_c3395ebd06b9d5e258ba56679343b452.setContent(html_70ba2d61e59e3aff5545346eafbd10fd);
+            
+        
+
+        marker_af3e6a3058374e3078f3c1d1f00bf5c0.bindPopup(popup_c3395ebd06b9d5e258ba56679343b452)
+        ;
+
+        
+    
+    
+            marker_af3e6a3058374e3078f3c1d1f00bf5c0.bindTooltip(
+                `<div>
+                     Mercy Foizey Nichols (Foizey is her maiden name, Nichols is her married name)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0ee437f33f9095472c573c08dd87e8a3 = L.marker(
+                [50.4500336, 30.5241361],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_23338580819edf5679ee3c0d64651e2c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d75902e50ae89456ca556dbe3b5c180c = $(`<div id="html_d75902e50ae89456ca556dbe3b5c180c" style="width: 100.0%; height: 100.0%;">Kiev, Ukraine</div>`)[0];
+                popup_23338580819edf5679ee3c0d64651e2c.setContent(html_d75902e50ae89456ca556dbe3b5c180c);
+            
+        
+
+        marker_0ee437f33f9095472c573c08dd87e8a3.bindPopup(popup_23338580819edf5679ee3c0d64651e2c)
+        ;
+
+        
+    
+    
+            marker_0ee437f33f9095472c573c08dd87e8a3.bindTooltip(
+                `<div>
+                     Rose Bloomberg (maiden name was Perlman, birth name was Raisa but it was changed at Ellis Island)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e086bf156355bbf8c64a112ef1a5f4c = L.marker(
+                [52.2297, 21.0122],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_cd5934aca6418c40d25ffa81369bbcc1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e8a1b7af1e05bb0426e5472c781196a7 = $(`<div id="html_e8a1b7af1e05bb0426e5472c781196a7" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_cd5934aca6418c40d25ffa81369bbcc1.setContent(html_e8a1b7af1e05bb0426e5472c781196a7);
+            
+        
+
+        marker_1e086bf156355bbf8c64a112ef1a5f4c.bindPopup(popup_cd5934aca6418c40d25ffa81369bbcc1)
+        ;
+
+        
+    
+    
+            marker_1e086bf156355bbf8c64a112ef1a5f4c.bindTooltip(
+                `<div>
+                     Anna Gertrude Goldman (Yiddish name: Genendel)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_839038647405c6ab381c9a64fd78bf10 = L.marker(
+                [41.5868654, -93.6249494],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_40dc726f6dc0c29bbe7a7b39e8a3bff4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a64db302fbed007400c4e057644865be = $(`<div id="html_a64db302fbed007400c4e057644865be" style="width: 100.0%; height: 100.0%;">Des Moines, Iowa</div>`)[0];
+                popup_40dc726f6dc0c29bbe7a7b39e8a3bff4.setContent(html_a64db302fbed007400c4e057644865be);
+            
+        
+
+        marker_839038647405c6ab381c9a64fd78bf10.bindPopup(popup_40dc726f6dc0c29bbe7a7b39e8a3bff4)
+        ;
+
+        
+    
+    
+            marker_839038647405c6ab381c9a64fd78bf10.bindTooltip(
+                `<div>
+                     Maiden name: Hilda Goldman, Married name: Hilda Glasser, Hebrew name: Hagar (pronounced HUG-ar), Nicknames: Huggie, Hugs
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a0cd2abfcbd2d99de9157045f93af809 = L.marker(
+                [53.3493795, -6.2605593],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_1cc1bdf4e1fc697c0af494ce1efe1670 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2058c8cb965552363dcb1d3693bb926a = $(`<div id="html_2058c8cb965552363dcb1d3693bb926a" style="width: 100.0%; height: 100.0%;">Dublin, Ireland</div>`)[0];
+                popup_1cc1bdf4e1fc697c0af494ce1efe1670.setContent(html_2058c8cb965552363dcb1d3693bb926a);
+            
+        
+
+        marker_a0cd2abfcbd2d99de9157045f93af809.bindPopup(popup_1cc1bdf4e1fc697c0af494ce1efe1670)
+        ;
+
+        
+    
+    
+            marker_a0cd2abfcbd2d99de9157045f93af809.bindTooltip(
+                `<div>
+                     Name: Julius J. Glasser, Nickname: Yuddie
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f82f7ec6333d59ff9c012857f50680ab = L.marker(
+                [52.2297, 21.0122],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_175c27d307779a7f8deb0d36eb10a3a7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1f36fd9b283de501c2ecf17c17c5a56d = $(`<div id="html_1f36fd9b283de501c2ecf17c17c5a56d" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_175c27d307779a7f8deb0d36eb10a3a7.setContent(html_1f36fd9b283de501c2ecf17c17c5a56d);
+            
+        
+
+        marker_f82f7ec6333d59ff9c012857f50680ab.bindPopup(popup_175c27d307779a7f8deb0d36eb10a3a7)
+        ;
+
+        
+    
+    
+            marker_f82f7ec6333d59ff9c012857f50680ab.bindTooltip(
+                `<div>
+                     Dora (Dvorah) Mack
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_92c5030c80981afa777aac00d99e1930 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_016fc0ad342da11e73c620a8320071ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_481e3fdb121aa60ecd02e0b296a936ce = $(`<div id="html_481e3fdb121aa60ecd02e0b296a936ce" style="width: 100.0%; height: 100.0%;">New York, NY</div>`)[0];
+                popup_016fc0ad342da11e73c620a8320071ee.setContent(html_481e3fdb121aa60ecd02e0b296a936ce);
+            
+        
+
+        marker_92c5030c80981afa777aac00d99e1930.bindPopup(popup_016fc0ad342da11e73c620a8320071ee)
+        ;
+
+        
+    
+    
+            marker_92c5030c80981afa777aac00d99e1930.bindTooltip(
+                `<div>
+                     Helen B Cohen (nee Umschweif)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dff6f3f0e21c31beeac796ae19ac7159 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_f770a91592a361de5dc30609683d09e5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_85eceb0325256e0be5ea164762cb4ad5 = $(`<div id="html_85eceb0325256e0be5ea164762cb4ad5" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_f770a91592a361de5dc30609683d09e5.setContent(html_85eceb0325256e0be5ea164762cb4ad5);
+            
+        
+
+        marker_dff6f3f0e21c31beeac796ae19ac7159.bindPopup(popup_f770a91592a361de5dc30609683d09e5)
+        ;
+
+        
+    
+    
+            marker_dff6f3f0e21c31beeac796ae19ac7159.bindTooltip(
+                `<div>
+                     Edward Cohen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d96f835122bdca99ba32be558b012c96 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_960059a5c626610e898f89c9ae4dcb16 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3321162db926b3a81dd1bb26b1404e03 = $(`<div id="html_3321162db926b3a81dd1bb26b1404e03" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_960059a5c626610e898f89c9ae4dcb16.setContent(html_3321162db926b3a81dd1bb26b1404e03);
+            
+        
+
+        marker_d96f835122bdca99ba32be558b012c96.bindPopup(popup_960059a5c626610e898f89c9ae4dcb16)
+        ;
+
+        
+    
+    
+            marker_d96f835122bdca99ba32be558b012c96.bindTooltip(
+                `<div>
+                     Joseph Martin
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_84c1770244ed1922e63b6701b5ed6fc9 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_6d0798867dd10a9c86154777c31d7002 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0e7488396f27b056545d8e3c9c0c128e = $(`<div id="html_0e7488396f27b056545d8e3c9c0c128e" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_6d0798867dd10a9c86154777c31d7002.setContent(html_0e7488396f27b056545d8e3c9c0c128e);
+            
+        
+
+        marker_84c1770244ed1922e63b6701b5ed6fc9.bindPopup(popup_6d0798867dd10a9c86154777c31d7002)
+        ;
+
+        
+    
+    
+            marker_84c1770244ed1922e63b6701b5ed6fc9.bindTooltip(
+                `<div>
+                     Esther Martin (nee Buntzman)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5e58aaa68c0d1f5e3f86c8c66ceae50b = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_43d33134e7466c1ffa19a8de68c3e456 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3b5350219891ff1378fd9135a7650c8c = $(`<div id="html_3b5350219891ff1378fd9135a7650c8c" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_43d33134e7466c1ffa19a8de68c3e456.setContent(html_3b5350219891ff1378fd9135a7650c8c);
+            
+        
+
+        marker_5e58aaa68c0d1f5e3f86c8c66ceae50b.bindPopup(popup_43d33134e7466c1ffa19a8de68c3e456)
+        ;
+
+        
+    
+    
+            marker_5e58aaa68c0d1f5e3f86c8c66ceae50b.bindTooltip(
+                `<div>
+                     Herman "Chaim" Epstein
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_db128b8fc708803a890c075771a710ee = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_7934f8c3fd5af9b3104668fdb9e64df3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3fd79399788f2a848c958cf04071a9f6 = $(`<div id="html_3fd79399788f2a848c958cf04071a9f6" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_7934f8c3fd5af9b3104668fdb9e64df3.setContent(html_3fd79399788f2a848c958cf04071a9f6);
+            
+        
+
+        marker_db128b8fc708803a890c075771a710ee.bindPopup(popup_7934f8c3fd5af9b3104668fdb9e64df3)
+        ;
+
+        
+    
+    
+            marker_db128b8fc708803a890c075771a710ee.bindTooltip(
+                `<div>
+                     Hyman King
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5cefc24a39292a8588c9369bd5ed028b = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(map_af33410d36ba15e7bd709793ba9ce512);
+        
+    
+        var popup_3fb554aead561a033a8c628cb6134902 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_acfd6504d4f99ec60787d2c1d1683fc9 = $(`<div id="html_acfd6504d4f99ec60787d2c1d1683fc9" style="width: 100.0%; height: 100.0%;">Unknown</div>`)[0];
+                popup_3fb554aead561a033a8c628cb6134902.setContent(html_acfd6504d4f99ec60787d2c1d1683fc9);
+            
+        
+
+        marker_5cefc24a39292a8588c9369bd5ed028b.bindPopup(popup_3fb554aead561a033a8c628cb6134902)
+        ;
+
+        
+    
+    
+            marker_5cefc24a39292a8588c9369bd5ed028b.bindTooltip(
+                `<div>
+                     Mamie Delinsky
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
